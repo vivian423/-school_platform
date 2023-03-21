@@ -13,6 +13,7 @@ Kid.destroy_all
 User.destroy_all
 Event.destroy_all
 
+
 # USER
 user_one = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "joyadc@gmail.com", teacher: false)
 
