@@ -10,6 +10,7 @@ class ApplicationPolicy
 
   def index?
     false
+    # or all user.teacher == true   ?
   end
 
   def show?

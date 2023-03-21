@@ -1,0 +1,13 @@
+<h1>Activity Show Page </h1>
+
+<div>
+
+  <% if policy(@activity).edit? %>
+    <%= link_to "Edit activity",edit_activity_path(@activity)  %>
+  <% end %>
+
+  <%= link_to "Delete this activity", @activity, method: :delete if policy(@activity).destroy? %>
+
+  <%= link_to "Create new activity", new_activity_path if policy(Activity).new? %>
+
+</div>
