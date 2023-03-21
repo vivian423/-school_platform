@@ -10,7 +10,7 @@ require "open-uri"
 puts "creating seeds..."
 Activity.destroy_all
 Room.destroy_all
-Kid.destroy_all
+# Kid.destroy_all
 User.destroy_all
 Event.destroy_all
 
