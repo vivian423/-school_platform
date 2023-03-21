@@ -14,9 +14,9 @@ User.destroy_all
 Event.destroy_all
 
 # USER
-user_one = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "joyadc@gmail.com")
+user_one = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "joyadc@gmail.com", teacher: false)
 
-user_two = User.create(first_name: "Marry", last_name: "Giampaolo", password: "123456", email: "giovanni@gmail.com")
+user_two = User.create(first_name: "Marry", last_name: "Giampaolo", password: "123456", email: "giovanni@gmail.com", teacher: false)
 
 user_three = User.create(first_name: "John", last_name: "Lumaca", password: "123456", email: "joaquin@gmail.com", teacher: true)
 
