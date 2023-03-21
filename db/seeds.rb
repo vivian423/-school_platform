@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+puts "creating seeds..."
 Activity.destroy_all
 Room.destroy_all
 Kid.destroy_all
@@ -14,26 +15,25 @@ User.destroy_all
 Event.destroy_all
 
 # USER
-user_one = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "joyadc@gmail.com", teacher: false)
+parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
 
-user_two = User.create(first_name: "Marry", last_name: "Giampaolo", password: "123456", email: "giovanni@gmail.com", teacher: false)
+parent_paul = User.create(first_name: "Paul", last_name: "Petterson", password: "123456", email: "marry@marry.com", teacher: false)
 
-user_three = User.create(first_name: "John", last_name: "Lumaca", password: "123456", email: "joaquin@gmail.com", teacher: true)
+teacher = User.create(first_name: "Mary", last_name: "White", password: "123456", email: "teacher@teacher.com", teacher: true)
 
-user_four = User.create(first_name: "Tom", last_name: "Bennett", password: "123456", email: "bennett@gmail.com", teacher: true)
-
+teacher_ana = User.create(first_name: "Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
 
 firste_seed = Event.create(
   title: 'Easter',
-  start_date: Time.strptime('06/30/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('06/30/2023 15:00', '%m/%d/%Y %H:%M'),
+  start_date: Time.strptime('04/07/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_date: Time.strptime('04/09/2023 15:00', '%m/%d/%Y %H:%M'),
   description: 'Easter Egg Lace Card, Egg and Spoon Race, Eggs for Fun, Easter Coloring Eggs Activity.'
 )
 
 seconde_seed = Event.create(
   title: 'Sports day',
-  start_date: Time.strptime('08/30/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('08/30/2023 15:00', '%m/%d/%Y %H:%M'),
+  start_date: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_date: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M'),
   description: 'Gymnastics, Swimming, Biking, Karate, Soccer.'
 )
 
@@ -51,155 +51,204 @@ fourthe_seed = Event.create(
   description: 'Skeleton Letters, Halloween Writing Center, Halloween Color Clip, Trick-or-Treat Numbers.'
 )
 
-
 # KIDS
-kid_one = Kid.create(
-  first_name: 'Jacob',
-  last_name: 'Murati'
+max = Kid.create(
+  first_name: 'Max',
+  last_name: 'Ortega'
 )
 
-kid_two = Kid.create(
-  first_name: 'Mark',
-  last_name: 'Begu'
-)
+# kid_two = Kid.create(
+#   first_name: 'Mark',
+#   last_name: 'Begu'
+# )
 
-kid_three = Kid.create(
-  first_name: 'Lucas',
-  last_name: 'Petterson'
-)
+# PARENTS
+parent_relationship_a = Parent.new
+parent_relationship_a.user_id = parent.id
+parent_relationship_a.kid_id = max.id
+parent_relationship_a.save
 
-kid_four = Kid.create(
-  first_name: 'William',
-  last_name: 'Kola'
-)
+parent_relationship_b = Parent.new
+parent_relationship_b.user_id = parent_paul.id
+parent_relationship_b.kid_id = max.id
+parent_relationship_b.save
 
-kid_five = Kid.create(
-  first_name: 'Mona',
-  last_name: 'Laci'
-)
+# kid_three = Kid.create(
+#   first_name: 'Lucas',
+#   last_name: 'Petterson'
+# )
+
+# kid_four = Kid.create(
+#   first_name: 'William',
+#   last_name: 'Kola'
+# )
+
+# kid_five = Kid.create(
+#   first_name: 'Mona',
+#   last_name: 'Laci'
+# )
 
 # ACTIVITIES
 first_seed = Activity.new(
-  bowel_movement: 'Good',
-  nap_duration: 1,
-  snack: 'Bread with cheese',
+  bowel_movement: '1',
+  nap_duration: 120,
+  snack: 'Ham with cheese',
+  snack_consumption: 'all',
+  lunch_consumption: 'most',
   lunch: 'Vegetable soup',
-  overall_mood: 'Happy'
+  overall_mood: 'normal'
 )
-  first_seed.kid = kid_one
-  first_seed.user = user_one
+  first_seed.kid = max
+  first_seed.user = teacher
   first_seed.save
 
 
  second_seed = Activity.new(
-   bowel_movement: 'Not so good',
-   nap_duration: 1,
-   snack: 'Chocochips with milk',
-   lunch: 'Hot dog',
-   overall_mood: 'Annoying'
+   bowel_movement: '2',
+   nap_duration: 150,
+   snack: 'Cookies with whole milk',
+   lunch: 'Ham and cheese sandwich, with side of cut oranges',
+   snack_consumption: 'all',
+   lunch_consumption: 'all',
+   overall_mood: 'More easily irritated'
   )
 
-  second_seed.kid = kid_one
-  second_seed.user = user_two
+  second_seed.kid = max
+  second_seed.user = teacher
   second_seed.save
 
 
   third_seed = Activity.new(
-    bowel_movement: 'Bad',
-    nap_duration: 2,
-    snack: 'Bread with cheese',
-    lunch: 'Tomato soup',
-    overall_mood: 'Bad'
+    bowel_movement: '1',
+    nap_duration: 120,
+    snack: 'Peanut butter and apples',
+    lunch: 'Tomato soup and chicken pasta',
+    snack_consumption: 'little',
+    lunch_consumption: 'most',
+    overall_mood: 'Happy overall'
   )
-   third_seed.kid = kid_three
-   third_seed.user = user_three
+   third_seed.kid = max
+   third_seed.user = teacher_ana
    third_seed.save
 
 
-    fourth_seed = Activity.new(
-      bowel_movement: 'Good',
-      nap_duration: 3,
-      snack: 'Bread with cheese',
-      lunch: 'Tomato soup',
-      overall_mood: 'Happy'
+  fourth_seed = Activity.new(
+    bowel_movement: '0',
+    nap_duration: 120,
+    snack: 'Kiwi and yogurt',
+    lunch: 'Spaghetti and meatballs',
+    snack_consumption: 'most',
+    lunch_consumption: 'all',
+    overall_mood: 'Happy overall'
+  )
+    fourth_seed.kid = max
+    fourth_seed.user = teacher_ana
+    fourth_seed.save
+
+  fifth_seed = Activity.new(
+    bowel_movement: '1',
+    nap_duration: 100,
+    snack: 'Banana and yoghurt',
+    lunch: 'Chicken and beans with rice',
+    snack_consumption: 'most',
+    lunch_consumption: 'most',
+    overall_mood: 'Happy overall'
+  )
+
+  fifth_seed.kid = max
+  fifth_seed.save
+
+  sixth_activity = Activity.new(
+    bowel_movement: '1',
+    nap_duration: 120,
+    snack: 'Oatmeal cookie and whole milk',
+    lunch: 'Baked hake with rice',
+    snack_consumption: 'all',
+    lunch_consumption: 'little',
+    overall_mood: 'Happy overall'
+  )
+
+  sixth_activity.kid = max
+  sixth_activity.save
+
+  seventh_activity = Activity.new(
+    bowel_movement: '0',
+    nap_duration: 110,
+    snack: 'Yoghurt and banana',
+    lunch: 'Pulled pork sandwich',
+    snack_consumption: 'most',
+    lunch_consumption: 'most',
+    overall_mood: 'Happy overall'
+  )
+
+    seventh_activity.kid = max
+    seventh_activity.save
+
+
+    #ROOM
+    oner_seed = Room.new(
+      name: 'Precious gems'
     )
-      fourth_seed.kid = kid_four
-      fourth_seed.user = user_four
-      fourth_seed.save
+    oner_seed.kid = max
+    oner_seed.user = teacher
+    oner_seed.save
 
-      fifth_seed = Activity.new(
-        bowel_movement: 'Good',
-        nap_duration: 2,
-        snack: 'Bread with cheese',
-        lunch: 'Hot dog',
-        overall_mood: 'Happy'
-      )
+    twor_seed = Room.new(
+      name: 'Golden elephant'
+    )
 
-      fifth_seed.kid = kid_five
-      fifth_seed.save
+    # twor_seed.kid = kid_two
+    # twor_seed.user = teacher
+    # twor_seed.save
 
-     #ROOM
-      oner_seed = Room.new(
-        name: 'Precious gems'
-      )
-      oner_seed.kid = kid_one
-      oner_seed.user = user_one
-      oner_seed.save
+    # threer_seed = Room.new(
+    #   name: 'Sweet panda'
+    # )
+    # threer_seed.kid = kid_three
+    # threer_seed.user = teacher_ana
+    # threer_seed.save
 
-      twor_seed = Room.new(
-        name: 'Golden elephant'
-      )
+    # fourr_seed = Room.new(
+    #   name: 'Delicious penguine'
+    # )
+    # fourr_seed.kid = kid_four
+    # fourr_seed.user = teacher
+    # fourr_seed.save
 
-      twor_seed.kid = kid_two
-      twor_seed.user = user_two
-      twor_seed.save
+    # fiver_seed = Room.new(
+    #   name: 'Silver monkey'
+    # )
 
-      threer_seed = Room.new(
-        name: 'Sweet panda'
-      )
-      threer_seed.kid = kid_three
-      threer_seed.user = user_three
-      threer_seed.save
+    # fiver_seed.kid = kid_five
+    # fiver_seed.save
 
-      fourr_seed = Room.new(
-        name: 'Delicious penguine'
-      )
-      fourr_seed.kid = kid_four
-      fourr_seed.user = user_four
-      fourr_seed.save
+    #Announcements
+    # firsta_seed = Announcement.new(
+    #   title: '',
+    #   content: ''
+    # )
+    # firsta_seed.user = teacher
+    # firsta_seed.save
 
-      fiver_seed = Room.new(
-        name: 'Silver monkey'
-      )
+    # seconda_seed = Announcement.new(
+    #   title: '',
+    #   content: ''
+    # )
+    # seconda_seed.user = teacher
+    # seconda_seed.save
 
-      fiver_seed.kid = kid_five
-      fiver_seed.save
+    # thirda_seed = Announcement.new(
+    #   title: '',
+    #   content: ''
+    # )
+    # thirda_seed.user = user_three
+    # thirda_seed.save
 
-      #Announcements
-      firsta_seed = Announcement.new(
-        title: '',
-        content: ''
-      )
-      firsta_seed.user = user_one
-      firsta_seed.save
+    # fourtha_seed = Announcement.new(
+    #   title: '',
+    #   content: ''
+    # )
+    # fourtha_seed.user = user_four
+    # fourtha_seed.save
 
-      seconda_seed = Announcement.new(
-        title: '',
-        content: ''
-      )
-      seconda_seed.user = user_two
-      seconda_seed.save
-
-      thirda_seed = Announcement.new(
-        title: '',
-        content: ''
-      )
-      thirda_seed.user = user_three
-      thirda_seed.save
-
-      fourtha_seed = Announcement.new(
-        title: '',
-        content: ''
-      )
-      fourtha_seed.user = user_four
-      fourtha_seed.save
+  puts "...seeds created..."
