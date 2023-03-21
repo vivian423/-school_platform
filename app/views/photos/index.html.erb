@@ -1,3 +1,16 @@
 <% @photos.each do |e| %>
 <%= cl_image_tag e.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if policy(Photo).destroy? %>
+    <%= link_to "Delete photo",photo_path(e), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "mt-2 btn btn-outline-secondary" %>
+  <% end %>
 <% end %>
+
+
+<% if policy(Photo).new? %>
+  <%= simple_form_for(@photo) do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+    <% end %>
+  <% end %>
+
+    <%# <%= link_to "Upload a new photo", new_photo_path, class: "mt-2 btn btn-outline-primary" %>
