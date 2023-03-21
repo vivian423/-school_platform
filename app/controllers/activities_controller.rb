@@ -2,8 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
 
   def index
-    @activities = Activity.all
-    authorize @activities
+    @activities = policy_scope(Activity)
   end
 
   def show
@@ -11,27 +10,15 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    @activity = Activity.new
-    authorize @activity
+    # @activity = Activity.new
+    # authorize @activity
   end
 
   def create
-    @activity = Activity.new
-    @activity.user = @activity
+    # @activity = Activity.new
+    # @activity.user = @activity
 
-    authorize @activity
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
+    # authorize @activity
   end
 
   private

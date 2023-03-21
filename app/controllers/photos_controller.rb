@@ -7,7 +7,6 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @photo.user = user
 
     authorize @photo
 
@@ -16,13 +15,16 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.all
-    authorize @photos
+    @photos = policy_scope(Photo)
+    @photo = Photo.new
   end
 
   def destroy
+    @photo = Photo.find(params[:id])
+    authorize @photo
+    @photo.destroy
+    redirect_to photos_path, status: :see_other
   end
-
 
     private
 

@@ -2,11 +2,9 @@ class ActivityPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      user.teacher? ? scope.all : ""
+      # user.teacher? ? scope.all : ""
+      scope.all
     end
-  end
-
-  def index?
   end
 
   def show?

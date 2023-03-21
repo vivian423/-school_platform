@@ -4,5 +4,4 @@ class MessagesController < ApplicationController
     # need to write code to create message, then authorize
     authorize @message
   end
-
 end
