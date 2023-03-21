@@ -52,16 +52,23 @@ fourthe_seed = Event.create(
   description: 'Skeleton Letters, Halloween Writing Center, Halloween Color Clip, Trick-or-Treat Numbers.'
 )
 
+last_seed = Event.create(
+  title: "Mark's birthday",
+  start_date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_date: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M'),
+  description: 'Mark turns 2!'
+)
+
 # KIDS
 max = Kid.create(
   first_name: 'Max',
   last_name: 'Ortega'
 )
 
-# kid_two = Kid.create(
-#   first_name: 'Mark',
-#   last_name: 'Begu'
-# )
+kid_two = Kid.create(
+  first_name: 'Mark',
+  last_name: 'Begu'
+)
 
 # PARENTS
 parent_relationship_a = Parent.new
