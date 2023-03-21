@@ -1,6 +1,8 @@
 class DashboardsController < ApplicationController
 
-  def index
+  def dashboard
+    @activities = Activity.find_by(Date.today)
+    @kid = current_user.parent.kid
   end
 
 end
