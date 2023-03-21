@@ -6,7 +6,6 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
