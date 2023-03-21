@@ -102,7 +102,7 @@ first_seed = Activity.new(
 )
   first_seed.kid = max
   first_seed.user = teacher
-  first_seed.save
+  first_seed.save!
 
 second_seed = Activity.new(
   bowel_movement: '2',
@@ -116,7 +116,7 @@ second_seed = Activity.new(
 )
 second_seed.kid = max
 second_seed.user = teacher
-second_seed.save
+second_seed.save!
 
 third_seed = Activity.new(
   bowel_movement: '1',
