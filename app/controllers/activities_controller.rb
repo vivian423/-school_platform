@@ -2,7 +2,8 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
 
   def index
-    authorize @activity
+    @activities = Activity.all
+    authorize @activities
   end
 
   def show
