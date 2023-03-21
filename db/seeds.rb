@@ -77,7 +77,7 @@ kid_five = Kid.create(
 
 # ACTIVITIES
 first_seed = Activity.new(
-  activity_bowel_movement: 'Good'
+  activity_bowel_movement: 'Good',
   activity_nap_duration: 1,
   activity_snack: 'Bread with cheese',
   activity_lunch: 'Vegetable soup',
@@ -89,7 +89,7 @@ first_seed = Activity.new(
 
 
  second_seed = Activity.new(
-   activity_bowel_movement: 'Not so good'
+   activity_bowel_movement: 'Not so good',
    activity_nap_duration: 1,
    activity_snack: 'Bread with cheese',
    activity_lunch: 'Hot dog',
@@ -102,7 +102,7 @@ first_seed = Activity.new(
 
 
   third_seed = Activity.new(
-    activity_bowel_movement: 'Bad'
+    activity_bowel_movement: 'Bad',
     activity_nap_duration: 2,
     activity_snack: 'Bread with cheese',
     activity_lunch: 'Tomato soup',
@@ -114,7 +114,7 @@ first_seed = Activity.new(
 
 
     fourth_seed = Activity.new(
-      activity_bowel_movement: 'Good'
+      activity_bowel_movement: 'Good',
       activity_nap_duration: 3,
       activity_snack: 'Bread with cheese',
       activity_lunch: 'Tomato soup',
@@ -128,7 +128,7 @@ first_seed = Activity.new(
 
 
       fifth_seed = Activity.new(
-        activity_bowel_movement: 'Good'
+        activity_bowel_movement: 'Good',
         activity_nap_duration: 2,
         activity_snack: 'Bread with cheese',
         activity_lunch: 'Hot dog',
