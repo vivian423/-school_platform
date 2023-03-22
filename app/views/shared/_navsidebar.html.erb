@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="row flex-nowwrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-1">
+      <a href="/" class="d-flex align-items-center pb-5">
+        <span class="fs-3 text-black text-decoration-none">Collevio</span>
+      </a>
+      <ul class="nav nav-pills flex-column mb-sm-auto align-items-sm-start"id="menu">
+        <% if user_signed_in? %>
+           <li class="nav-item">
+              <a href="dashboard" class="nav-link align-middle">
+                <svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1143 6.3531C18.4098 5.8823 17.5902 5.8823 16.8857 6.3531L16.8602 6.36981L7.59151 12.295C6.56733 12.9484 6 14.0759 6 15.2057V27.8641C6 29.0591 6.94389 30 8.12687 30H27.8731C29.0561 30 30 29.0591 30 27.8641V15.2057C30 14.0373 29.3819 12.9897 28.3793 12.2764L19.1398 6.36981L19.1143 6.3531ZM20.7675 3.8497C19.0609 2.71676 16.939 2.71677 15.2325 3.84971L5.97684 9.76659C5.97705 9.76646 5.97663 9.76672 5.97684 9.76659C4.04619 10.9986 3 13.1039 3 15.2057V27.8641C3 30.7089 5.27999 33 8.12687 33H27.8731C30.72 33 33 30.7089 33 27.8641V15.2057C33 12.8825 31.7476 10.9749 30.078 9.80333C30.0604 9.79095 30.0425 9.77896 30.0243 9.76735L20.7675 3.8497Z" fill="black"/></svg>
+                <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#activities_menu" data-bs-toggle="collapse" class="nav-link align-middle">
+                <svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.0059 13.9372L22.1466 1.99749C21.4878 1.33417 20.4995 1.33417 19.8407 1.99749C19.1818 2.6608 19.1818 3.65578 19.8407 4.3191L20.1701 4.65075L10.6168 11.4497L5.34602 12.1131C3.6989 12.2789 2.2165 13.6055 1.72236 15.098C1.22823 16.5905 1.55765 18.4146 2.71063 19.4095L8.47554 25.2136L4.35775 29.3593C3.6989 30.0226 3.6989 31.0176 4.35775 31.6809C4.68717 32.0126 5.18131 32.1784 5.51073 32.1784C5.84016 32.1784 6.33429 32.0126 6.66371 31.6809L10.7815 27.5352L16.5464 33.3392C17.37 34.1683 18.3582 34.5 19.5112 34.5C20.0054 34.5 20.4995 34.5 20.8289 34.3342C22.476 33.8367 23.629 32.3442 23.7937 30.6859L24.6173 25.3794L29.5586 18.4146C30.0528 17.5854 29.8881 16.5905 29.2292 16.093C28.4057 15.5955 27.4174 15.7613 26.9233 16.4246L21.8172 23.7211C21.6525 23.8869 21.6525 24.2186 21.4878 24.3844L20.6642 30.0226C20.4995 30.6859 20.0054 30.8518 19.8407 31.0176C19.6759 31.0176 19.1818 31.1834 18.8524 30.8518L11.9345 23.8869L5.18131 17.2538C4.68717 16.9221 4.85188 16.4246 4.85188 16.2588C4.85188 16.093 5.18131 15.5955 5.84015 15.4296L11.4404 14.6005C11.7698 14.6005 11.9345 14.4347 12.0992 14.2688L22.3113 6.97236L31.6999 16.4246C32.0293 16.7563 32.5235 16.9221 32.8529 16.9221C33.1823 16.9221 33.6764 16.7563 34.0059 16.4246C34.6647 15.7613 34.6647 14.6005 34.0059 13.9372Z" fill="black"/></svg>
+                <span class="ms-1 d-none d-sm-inline">Activities</span>
+              </a>
+              <ul class="collapse show nav flex-column ms-1" id="activities_menu" data-bs-parent="#menu">
+                <li class="w-100">
+                  <a href="#" class="nav-link"> <span class="d-none d-sm-inline">Bowel movement</span> B </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link"> <span class="d-none d-sm-inline">Nap duration</span> N </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link"> <span class="d-none d-sm-inline">Snack</span> S </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link"> <span class="d-none d-sm-inline">Lunch</span> L </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link"> <span class="d-none d-sm-inline">Overall mood</span> O </a>
+                </li>
+              </ul>
+
+            </li>
+
+
+            <li class="nav-item align-middle">
+              <%= link_to "Messages", "#", class: "nav-link" %>
+            </li>
+            <%# <li class = "button">
+            <%= link_to "Create listing", new_listing_path, class: "btn btn-success ms-3"%>
+            <li class="nav-item align-middle">
+              <%= link_to "Photos", "#", class: "nav-link" %>
+            </li>
+            <li class="nav-item align-middle">
+              <%= link_to "Records", "#", class: "nav-link" %>
+            </li>
+            <li class="nav-item align-middle">
+              <%= link_to "Calendar", "#", class: "nav-link" %>
+            </li>
+
+             </li>
+            <li class="nav-item dropdown ms-3">
+              <%= image_tag "https://ionicframework.com/docs/img/demos/avatar.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to current_user.first_name, "#", class: "dropdown-item" %>
+                <%= link_to "Account Settings", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item ps-2">
+              <%= link_to "Search", "#", class: "nav-link" %>
+            </li>
+            <li class="nav-item ps-2">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item ps-2">
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
