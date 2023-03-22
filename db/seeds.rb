@@ -282,9 +282,12 @@ photos_array = [
   "https://images.unsplash.com/photo-1630465651806-09682f8364b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
   "https://images.unsplash.com/photo-1564429238817-393bd4286b2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2luZGVyZ2FydGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60.jpg"
 ]
+counter = 0
 photos_array.each do |photo_url|
   file = URI.open(photo_url)
   photo = Photo.create
-  photo.photo.attach(io: file, filename: "a.png", content_type: "image/png")
+  file_name = "kids_".concat(counter).concat(".png")
+  photo.photo.attach(io: file, filename: file_name, content_type: "image/png")
+  counter += 1
 end
 puts "...seeds created..."
