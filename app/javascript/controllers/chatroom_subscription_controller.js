@@ -21,7 +21,7 @@ export default class extends Controller {
     }
 
     resetForm(event) {
-      const form = event.targets
+      const form = event.target
       form.reset()
     }
 

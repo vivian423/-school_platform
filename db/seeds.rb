@@ -24,9 +24,9 @@ parent = User.create(first_name: "Joy", last_name: "Petterson", password: "12345
 
 parent_paul = User.create(first_name: "Paul", last_name: "Petterson", password: "123456", email: "marry@marry.com", teacher: false)
 
-teacher = User.create(first_name: "Mary", last_name: "White", password: "123456", email: "teacher@teacher.com", teacher: true)
+teacher = User.create(first_name: " Ms Mary", last_name: "White", password: "123456", email: "teacher@teacher.com", teacher: true)
 
-teacher_ana = User.create(first_name: "Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
+teacher_ana = User.create(first_name: " Ms Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
 
 firste_seed = Event.create(
   title: 'Easter',
@@ -284,7 +284,7 @@ photos_array = [
 ]
 photos_array.each do |photo_url|
   file = URI.open(photo_url)
-  photo = Photo.create
+  photo = Photo.create!
   photo.photo.attach(io: file, filename: "a.png", content_type: "image/png")
 end
-puts "...seeds created..."
+puts "... seeds created ..."
