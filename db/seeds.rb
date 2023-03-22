@@ -8,12 +8,12 @@
 require "open-uri"
 
 puts "creating seeds..."
-# Kid.destroy_all
+
 Activity.destroy_all
 Room.destroy_all
 User.destroy_all
 Event.destroy_all
-
+Kid.destroy_all
 
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
@@ -263,4 +263,8 @@ seventh_activity = Activity.new(
   # fourtha_seed.user = user_four
   # fourtha_seed.save
 
-  puts "...seeds created..."
+chatroom_max = Chatroom.new(name: "Max's chatroom")
+chatroom_max.kid = max
+chatroom_max.save!
+
+puts "...seeds created..."

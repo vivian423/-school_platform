@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
 
   resources :photos, only: %i[index show new create destroy]
+
+  resources :activities
+
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
-  resources :activities
 end
