@@ -1,17 +1,17 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :announcements
-  has_many :rooms
-  has_many :activities
+  has_many :announcements, dependent: :destroy
+  has_many :rooms, dependent: :destroy
+  has_many :activities, dependent: :destroy
 
-  has_many :messages
-  has_many :chatrooms, through: :messages
-  
-  has_many :parents
+  has_many :messages, dependent: :destroy
+  has_many :chatrooms, through: :messages, dependent: :destroy
 
-  has_many :kids, through: :rooms
-  has_many :children, through: :parents, source: :kid
+  has_many :parents, dependent: :destroy
+
+  has_many :kids, through: :rooms, dependent: :destroy
+  has_many :children, through: :parents, source: :kid, dependent: :destroy
 
   # is it possible to do through x2?
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
-  get '/dashboard', to: 'dashboards#dashboard'
+  get '/dashboard', to: 'pages#dashboard'
 
   resources :photos, only: %i[index show new create destroy]
   resources :chatrooms, only: :show do
