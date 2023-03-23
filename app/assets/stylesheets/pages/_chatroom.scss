@@ -1,0 +1,128 @@
+.chatroom {
+  // margin-left: 140px;
+  // margin-right: 430px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 0;
+  width: 55%;
+  padding: 12px;
+  background: white;
+  margin-top: 30px;
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // flex-grow: 1;
+
+  h1 {
+    // border-bottom: 1px solid $gray-200;
+    margin-bottom: 0;
+    padding: 10px;
+    opacity: .8;
+    font-size: 19px;
+    border-bottom: 1.3px solid rgba(0, 123, 78, 0.807);
+
+  }
+  .btn {
+    background-color: rgba(0, 123, 78, 1);
+    color: white;
+    // opacity: .8;
+  }
+
+  .messages {
+    height: 100%;
+    overflow-y: hidden;
+    padding: 1rem;
+    align-items: right;
+  }
+
+  .form-control {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    height: 100%;
+  }
+
+  #new_message {
+    // border-top: 1px solid $gray-200;
+    padding: 1rem;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+}
+.chatroom-sidebar {
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 31px;
+  color: #007B4E;
+}
+
+.avatar-sidebar-chatroom {
+  width: 350px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: auto auto 1.4rem auto;
+  // display: block;
+  // border: white 1px solid;
+}
+
+#sidebar-chatroom {
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  // position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: (0px 1px 8px rgba(104, 103, 103, 0.1));
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+
+.container-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .chatroom-sidebar-name {
+//   position: absolute;
+//   left: 9.2%;
+//   right: 74.29%;
+//   top: 6.52%;
+//   bottom: 90.33%;
+
+//   font-family: 'Roboto', sans-serif;
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 26px;
+//   line-height: 31px;
+
+//   color: #007B4E;
+// }
+
+// .chatroom-sidebar-room-teacher {
+//   position: absolute;
+//   left: 9.2%;
+//   right: 56.6%;
+//   top: 11.5%;
+//   bottom: 86.97%;
+
+//   font-family: 'Roboto', sans-serif;
+//   font-style: normal;
+//   font-weight: 700;
+//   opacity: .8;
+//   font-size: 18px;
+//   line-height: 22px;
+//   /* identical to box height */
+
+// }

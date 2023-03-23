@@ -1,8 +1,65 @@
-<h1>Index - Activities</h1>
+<div class="navsidebar">
+</div>
 
-<div>
-  <% @activities.each do |activity| %>
-    <%= activity.lunch %>
-    <%= activity.lunch_consumption %>
-  <% end %>
+<div class="activities-grid-container" data-controller="activities" data-activities-naps-value="<%= @naps %>" data-activities-foods-value="<%= @food_consumption %>" data-activities-bowels-value="<%= @bowels %>" data-activities-moods-value="<%= @moods %>">
+  <div class="grid-item">
+    <h3 class="card-headers">Nap Durations Overview</h3>
+    <div class="chart-card">
+      <canvas class="chart-canvas" data-activities-target="nap"></canvas>
+    </div>
+  </div>
+  <div class="grid-item">
+    <h3 class="card-headers">Snacks & Lunches</h3>
+    <div class="chart-card">
+      <canvas class="chart-canvas" data-activities-target="food"></canvas>
+    </div>
+  </div>
+  <div class="grid-item">
+    <h3 class="card-headers">Bowel Movements</h3>
+    <div class="chart-card">
+      <canvas class="chart-canvas" data-activities-target="bowel"></canvas>
+    </div>
+  </div>
+  <div class="grid-item">
+    <h3 class="card-headers">Mood Constistency</h3>
+    <div class="chart-card">
+      <canvas class="chart-canvas" data-activities-target="mood"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="scrollable-div">
+    <% @activities.each do |activity| %>
+      <div class="activity-log">
+        <h2 class="activity-log-header"><%= Date.today %></h2>
+        <h3 class="card-headers">Snacks</h3>
+        <div class="info-card">
+          <p><%= activity.snack %></p>
+          <p><strong>Eaten: </strong><%= activity.snack_consumption %></p>
+        </div>
+
+        <h3 class="card-headers">Lunch</h3>
+        <div class="info-card">
+          <p><%= activity.lunch %></p>
+          <p><strong>Eaten: </strong><%= activity.lunch_consumption %></p>
+        </div>
+
+        <h3 class="card-headers">Bowel Movements</h3>
+        <div class="info-card">
+          <p><strong>Amount: </strong><%= activity.bowel_movement %></p>
+        </div>
+
+        <h3 class="card-headers">Nap Time</h3>
+        <div class="info-card">
+          <p><strong>Duration: </strong><%= activity.nap_duration %></p>
+        </div>
+
+        <h3 class="card-headers">Mood</h3>
+        <div class="info-card">
+          <p><strong>Overall: </strong><%= activity.overall_mood %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

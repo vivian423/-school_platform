@@ -2,7 +2,7 @@
   background-color: white;
   width: 110px;
   height: 100vh;
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   box-shadow: (0px 1px 8px rgba(104, 103, 103, 0.1));
@@ -22,12 +22,16 @@
   border-bottom-left-radius: 16px;
 }
 
+#sidebar ul li {
+  list-style-type: none;
+}
+
 .dashboard-grid-container {
   margin-left: 110px;
   margin-right: 400px;
   height: 100vh;
   max-height: 100vh;
-  padding: 30px 40px 40px 40px;
+  padding: 35px 40px 40px 40px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 2, 1fr;
@@ -82,7 +86,7 @@
   box-sizing: border-box;
 }
 
-.dashboard-card-titles {
+.card-headers {
   font-size: 1.2rem;
   font-family: 'Roboto', sans-serif;
   color: rgba(0, 123, 78, 1);
