@@ -1,11 +1,11 @@
-
+// css for nav-sidebar
 .navbar{
   align-items: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: white;
-  width: 140px;
+  width: 110px;
   min-width: none;
   position: fixed;
   // top: 0;
@@ -15,7 +15,7 @@
   border-bottom-right-radius: 12px;
   justify-content: center;
 }
-
+// css code for the list of icons inside the nav-sidebar
 #menu {
   row-gap: 20px;
 }

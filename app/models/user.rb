@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   has_many :kids, through: :rooms, dependent: :destroy
   has_many :children, through: :parents, source: :kid, dependent: :destroy
-
+  has_many :chatrooms, through: :children, dependent: :destroy
   # is it possible to do through x2?
 
   devise :database_authenticatable, :registerable,
@@ -20,3 +20,4 @@ class User < ApplicationRecord
 end
 
 # has_many :bookmarked_posts, through: :bookmarks, source: :post
+# user.chatrooms yay!

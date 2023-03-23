@@ -18,7 +18,6 @@ Kid.destroy_all
 User.destroy_all
 Event.destroy_all
 
-
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
 
@@ -102,7 +101,7 @@ parent_relationship_b.save
 
 # ACTIVITIES
 first_seed = Activity.new(
-  bowel_movement: '1',
+  bowel_movement: 1,
   nap_duration: 120,
   snack: 'Ham with cheese',
   snack_consumption: 'all',
@@ -111,12 +110,12 @@ first_seed = Activity.new(
   date: Time.strptime('03/20/2023 17:00', '%m/%d/%Y %H:%M'),
   overall_mood: 'normal'
 )
-  first_seed.kid = max
-  first_seed.user = teacher
-  first_seed.save!
+first_seed.kid = max
+first_seed.user = teacher
+first_seed.save!
 
 second_seed = Activity.new(
-  bowel_movement: '2',
+  bowel_movement: 2,
   nap_duration: 150,
   snack: 'Cookies with whole milk',
   lunch: 'Ham and cheese sandwich, with side of cut oranges',
@@ -130,7 +129,7 @@ second_seed.user = teacher
 second_seed.save!
 
 third_seed = Activity.new(
-  bowel_movement: '1',
+  bowel_movement: 1,
   nap_duration: 120,
   snack: 'Peanut butter and apples',
   lunch: 'Tomato soup and chicken pasta',
@@ -139,12 +138,12 @@ third_seed = Activity.new(
   lunch_consumption: 'most',
   overall_mood: 'Happy overall'
 )
-  third_seed.kid = max
-  third_seed.user = teacher_ana
-  third_seed.save!
+third_seed.kid = max
+third_seed.user = teacher_ana
+third_seed.save!
 
 fourth_seed = Activity.new(
-  bowel_movement: '0',
+  bowel_movement: 0,
   nap_duration: 120,
   snack: 'Kiwi and yogurt',
   lunch: 'Spaghetti and meatballs',
@@ -153,12 +152,12 @@ fourth_seed = Activity.new(
   lunch_consumption: 'all',
   overall_mood: 'Happy overall'
 )
-  fourth_seed.kid = max
-  fourth_seed.user = teacher_ana
-  fourth_seed.save!
+fourth_seed.kid = max
+fourth_seed.user = teacher_ana
+fourth_seed.save!
 
 fifth_activity = Activity.new(
-  bowel_movement: '1',
+  bowel_movement: 1,
   nap_duration: 100,
   snack: 'Banana and yoghurt',
   lunch: 'Chicken and beans with rice',
@@ -172,11 +171,11 @@ fifth_activity.user = teacher
 fifth_activity.save!
 
 sixth_activity = Activity.new(
-  bowel_movement: '1',
+  bowel_movement: 1,
   nap_duration: 120,
   snack: 'Oatmeal cookie and whole milk',
   lunch: 'Baked hake with rice',
-  date: Time.strptime('03/17/2023 17:00', '%m/%d/%Y %H:%M'),
+  date: Time.strptime('03/27/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',
   lunch_consumption: 'little',
   overall_mood: 'Happy overall'
@@ -187,31 +186,29 @@ sixth_activity.user = teacher
 sixth_activity.save!
 
 seventh_activity = Activity.new(
-  bowel_movement: '0',
+  bowel_movement: 0,
   nap_duration: 110,
   snack: 'Yoghurt and banana',
   lunch: 'Pulled pork sandwich',
-  date: Time.strptime('03/16/2023 17:00', '%m/%d/%Y %H:%M'),
+  date: Time.strptime('03/28/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'most',
   lunch_consumption: 'most',
   overall_mood: 'Happy overall'
 )
 
-  seventh_activity.kid_id = max.id
-  seventh_activity.save
+seventh_activity.kid_id = max.id
+seventh_activity.save
 
+oner_seed = Room.new(
+  name: 'Precious gems'
+)
+oner_seed.kid = max
+oner_seed.user = teacher
+oner_seed.save
 
-  #ROOM
-  oner_seed = Room.new(
-    name: 'Precious gems'
-  )
-  oner_seed.kid = max
-  oner_seed.user = teacher
-  oner_seed.save
-
-  twor_seed = Room.new(
-    name: 'Golden elephant'
-  )
+  # twor_seed = Room.new(
+  # name: 'Golden elephant'
+  # )
 
   # twor_seed.kid = kid_two
   # twor_seed.user = teacher
@@ -237,8 +234,6 @@ seventh_activity = Activity.new(
 
   # fiver_seed.kid = kid_five
   # fiver_seed.save
-
-  #Announcements
   # firsta_seed = Announcement.new(
   #   title: '',
   #   content: ''
@@ -264,8 +259,8 @@ seventh_activity = Activity.new(
   #   title: '',
   #   content: ''
   # )
-  # fourtha_seed.user = user_four
-  # fourtha_seed.save
+     # fourtha_seed.user = user_four
+     # fourtha_seed.save
 
 chatroom_max = Chatroom.new(name: "Max's chatroom")
 chatroom_max.kid = max
