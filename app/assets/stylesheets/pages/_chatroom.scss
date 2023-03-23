@@ -1,5 +1,5 @@
 .chatroom {
-  margin-left: 140px;
+  // margin-left: 140px;
   // margin-right: 430px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 0;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1;
+  // flex-grow: 1;
 
   h1 {
     // border-bottom: 1px solid $gray-200;
@@ -77,7 +77,7 @@
   background-color: white;
   width: 400px;
   height: 100vh;
-  position: fixed;
+  // position: fixed;
   top: 0;
   right: 0;
   box-shadow: (0px 1px 8px rgba(104, 103, 103, 0.1));
@@ -88,6 +88,11 @@
   justify-content: space-evenly;
 }
 
+
+.container-page {
+  display: flex;
+  justify-content: space-between;
+}
 
 // .chatroom-sidebar-name {
 //   position: absolute;
