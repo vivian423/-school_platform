@@ -1,9 +1,10 @@
-<% @photos.each do |e| %>
+<!-- <% @photos.each do |e| %>
 <%= cl_image_tag e.photo.key, height: 300, width: 400, crop: :fill %>
   <% if policy(Photo).destroy? %>
     <%= link_to "Delete photo",photo_path(e), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "mt-2 btn btn-outline-secondary" %>
   <% end %>
-<% end %>
+<% end %> -->
+
 
 
 <% if policy(Photo).new? %>
@@ -14,25 +15,20 @@
   <% end %>
 
     <%# <%= link_to "Upload a new photo", new_photo_path, class: "mt-2 btn btn-outline-primary" %>
-<div id="navsidebar">
-</div>
 
-<div class="container">
+<div class="container no-padding-top">
   <div class="row">
 
-    <div class="col-12 col-lg-8">
+    <div class="col-12 col-lg-8 pt30">
+
       <div class="images-container">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/assets/images/athens.jpeg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/images/Oslo1.jpeg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/images/Oslo2.jpeg" class="d-block w-100" alt="...">
-          </div>
+          <% @photos.each_with_index do |e, index| %>
+            <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
+              <%= cl_image_tag e.photo.key, height: 600, width: 800, crop: :fill %>
+            </div>
+          <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,14 +43,16 @@
     </div>
 
     <div class="col-12 col-lg-4">
-      <div id="sidebar">
-        <div class="child-info"></div>
+     <div class="sidebar-images">
+        <div class="child-info">Some text</div>
       </div>
 
       <div class="image-gallery-sidebar">
-        <div class="img-grid"></div>
+        <% @photos.each do |photo| %>
+          <%= cl_image_tag photo.photo.key, height: 70 %>
+        <% end %>
+
       </div>
     </div>
-
   </div>
 </div>
