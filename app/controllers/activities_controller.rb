@@ -4,8 +4,16 @@ class ActivitiesController < ApplicationController
   def index
     @activities = policy_scope(Activity)
     @naps = @activities.map(&:nap_duration)
+    @five_naps = @naps.last(5)
     @bowels = @activities.map(&:bowel_movement)
+    @five_bowels = @bowels.last(5)
     @moods = @activities.map(&:overall_mood)
+    @dates = @activities.map(&:date)
+    @five_dates = @dates.last(5).map do |date|
+      date.strftime("%a %d")
+      # date.strftime("%Y-%m-%d")
+    end
+
     @food_consumption = @activities.map do |activity|
       activity.snack_consumption
       activity.lunch_consumption
@@ -14,6 +22,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
