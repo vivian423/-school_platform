@@ -1,8 +1,18 @@
-.container {
+.container{
   margin-left: 110px;
   margin-right: 400px;
   padding: 30px 40px 40px 40px;
   box-sizing: border-box;
+  gap: 10px;
+  gap: 10px 20px; /* row-gap column gap */
+  row-gap: 10px;
+  column-gap: 20px;
+
+}
+
+
+  .carousel-inner{
+    border-radius: .3125rem;
 }
 
 .no-padding-top {
@@ -13,13 +23,33 @@
   padding-top: 30px;
 }
 
+.sidebar-images{
+  border: 5px solid #f2f2f2;
+  background-color: #f2f2f2;
+  padding-top: 30PX;
+  margin-top: 30PX;
+}
+
+
+
+
 .image-gallery-sidebar {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 2px;
+  max-height: 31.25rem;
+  overflow-y: scroll;
+}
+
+
 
   img {
     width: 100%;
     object-fit: cover;
+    padding: 10px;
+
   }
-}
+
+  .info-child{
+    padding-top: 20px;
+  }
