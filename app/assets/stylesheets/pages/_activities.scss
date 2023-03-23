@@ -1,0 +1,76 @@
+.sidebar {
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: (0px 1px 8px rgba(104, 103, 103, 0.1));
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.activities-grid-container {
+  margin-left: 110px;
+  margin-right: 400px;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 35px 40px 40px 40px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 40px;
+}
+
+.navsidebar {
+  background-color: white;
+  width: 110px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: (0px 1px 8px rgba(104, 103, 103, 0.1));
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.chart-card {
+  height: 100%;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: (0px 1px 8px rgba(50, 50, 50, 0.1));
+  box-sizing: border-box;
+}
+
+.scrollable-div {
+  margin-top: 20px;
+  padding: 30px 40px 40px 40px;
+  max-height: 95%;
+  overflow-y: auto;
+}
+
+.info-card {
+  width: 100%;
+  background-color: rgb(213, 240, 215);
+  border-radius: 12px;
+  padding: 20px 20px 5px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}

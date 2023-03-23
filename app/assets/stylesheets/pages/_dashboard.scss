@@ -22,16 +22,16 @@
   border-bottom-left-radius: 16px;
 }
 
-#navsidebar ul li {
+#sidebar ul li {
   list-style-type: none;
 }
 
-.grid-container {
+.dashboard-grid-container {
   margin-left: 110px;
   margin-right: 400px;
   height: 100vh;
   max-height: 100vh;
-  padding: 30px 40px 40px 40px;
+  padding: 35px 40px 40px 40px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 2, 1fr;
@@ -86,7 +86,7 @@
   box-sizing: border-box;
 }
 
-.dashboard-card-titles {
+.card-headers {
   font-size: 1.2rem;
   font-family: 'Roboto', sans-serif;
   color: rgba(0, 123, 78, 1);
