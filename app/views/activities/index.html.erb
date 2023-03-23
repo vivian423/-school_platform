@@ -9,7 +9,7 @@ data-activities-bowels-value="<%= @five_bowels %>"
 data-activities-moods-value="<%= @moods %>"
 data-activities-dates-value="<%= @five_dates %>">
   <div class="grid-item">
-    <h3 class="card-headers">Nap Durations Overview</h3>
+    <h3 class="card-headers">Nap Duration</h3>
     <div class="chart-card">
       <canvas class="chart-canvas" data-activities-target="nap"></canvas>
     </div>
@@ -17,7 +17,40 @@ data-activities-dates-value="<%= @five_dates %>">
   <div class="grid-item">
     <h3 class="card-headers">Snacks & Lunches</h3>
     <div class="chart-card">
-      <canvas class="chart-canvas" data-activities-target="food"></canvas>
+      <table>
+      <tbody>
+        <tr>
+          <td></td>
+          <% @five_dates.each do |date| %>
+            <td><%= date %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>Snack</td>
+          <% @five_snack_consumption.each do |a| %>
+            <% if a == "all" %>
+                <td>😃</td>
+              <% elsif a == "most" %>
+                <td>🙂</td>
+            <% else %>
+                <td>😕</td>
+            <% end %>
+          <% end %>
+        </tr>
+        <tr>
+          <td>Lunch</td>
+        <% @five_lunch_consumption.each do |a| %>
+            <% if a == "all" %>
+                <td>😃</td>
+              <% elsif a == "most" %>
+                <td>🙂</td>
+            <% else %>
+                <td>😕</td>
+            <% end %>
+          <% end %>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="grid-item">
@@ -38,7 +71,7 @@ data-activities-dates-value="<%= @five_dates %>">
   <div class="scrollable-div">
     <% @activities.each do |activity| %>
       <div class="activity-log">
-        <h2 class="activity-log-header"><%= Date.today.strftime("%A, %B %e, %Y") %></h2>
+        <h2 class="activity-log-header"><%= activity.date.strftime("%A, %B %e, %Y") %></h2>
         <h3 class="card-headers">Snacks</h3>
         <div class="info-card">
           <p><%= activity.snack %></p>

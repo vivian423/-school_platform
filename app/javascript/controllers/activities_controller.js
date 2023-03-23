@@ -13,6 +13,9 @@ export default class extends Controller {
   }
 
   connect() {
+    // Chart.defaults.backgroundColor = '#FF0099';
+    // Chart.defaults.borderColor = '#36A2EB';
+    // Chart.defaults.color = '#000';
     // console.log(this.datesValue)
 
     // var today = new Date();
@@ -34,7 +37,7 @@ export default class extends Controller {
     // dayBefore.toDateString()
     // twoDaysBefore.toDateString()
     // console.log(threeDaysBefore.toDateString('en-US', options))
-    const options = { weekday: 'long' }
+    // const options = { weekday: 'long' }
 
     // [`${threeDaysBefore.toDateString('en-US', options)}`, `${twoDaysBefore.toDateString('en-US', options)}`, `${dayBefore.toDateString('en-US', options)}`, `${yesterday.toDateString('en-US', options)}`, `${today.toDateString('en-US', options)}`],
 
@@ -45,19 +48,26 @@ export default class extends Controller {
         datasets: [{
           label: 'nap time (minutes)',
           data: this.napsValue,
-          borderWidth: 1
+          borderWidth: 1,
+          borderColor: '#007b4e',
+          backgroundColor: '#007b4e',
+          color: 'black',
         }]
       },
       options: {
-        scales: {
-          y: {
-            beginAtZero: true
+        plugins: {
+          legend: {
+             display: false, //This will do the task
           }
-          ticks: {
-            precision:0
-          }
+
         }
+
       }
+    //   options: {
+    //     legend: {
+    //        display: false
+    //     }
+    //  }
     });
 
     new Chart(this.bowelTarget, {
@@ -68,27 +78,41 @@ export default class extends Controller {
           label: 'bowel',
           data: this.bowelsValue,
           borderWidth: 1,
-          borderColor: '#FF6384',
-          backgroundColor: "red",
+          borderColor: '#007b4e',
+          backgroundColor: '#007b4e',
+          color: 'black',
         }]
       },
       options: {
+        plugins: {
+          legend: {
+             display: false, //This will do the task
+          }
+        },
         scales: {
           y: {
-            beginAtZero: true
+              ticks: {
+                  stepSize: 1
+              }
           }
-          ticks: {
-              userCallback(label, index, labels) {
-                 // only show if whole number
-                 if (Math.floor(label) === label) {
-                     return label;
-                 }
         }
-      }
-    });
+     }
+  //     options: {
+  //       scales: {
+  //         y: {
+  //           beginAtZero: true
+  //         },
+  //         ticks: {
+  //             userCallback(label, index, labels) {
+  //                // only show if whole number
+  //                if (Math.floor(label) === label) {
+  //                    return label;
+  //                }
+  //                 }
+  //               }
+  //               }
 
-  }
-Chart.defaults.backgroundColor = '#FF0099';
-Chart.defaults.borderColor = '#36A2EB';
-Chart.defaults.color = '#000';
+  // }
+});
+}
 }

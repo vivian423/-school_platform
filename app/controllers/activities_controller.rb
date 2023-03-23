@@ -2,22 +2,23 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
 
   def index
-    @activities = policy_scope(Activity)
+    @activities = policy_scope(Activity).order(created_at: :desc)
     @naps = @activities.map(&:nap_duration)
-    @five_naps = @naps.last(5)
+    @five_naps = @naps.first(5)
     @bowels = @activities.map(&:bowel_movement)
-    @five_bowels = @bowels.last(5)
+    @five_bowels = @bowels.first(5)
     @moods = @activities.map(&:overall_mood)
     @dates = @activities.map(&:date)
-    @five_dates = @dates.last(5).map do |date|
+    @snack_consumption = @activities.map(&:snack_consumption)
+    @lunch_consumption = @activities.map(&:lunch_consumption)
+    @five_dates = @dates.first(5).map do |date|
       date.strftime("%a %d")
       # date.strftime("%Y-%m-%d")
     end
+    @five_snack_consumption = @snack_consumption.last(5)
+    @five_lunch_consumption = @lunch_consumption.last(5)
 
-    @food_consumption = @activities.map do |activity|
-      activity.snack_consumption
-      activity.lunch_consumption
-    end
+        # @five_snack_consumption = @
     # @values = {naps: @naps, bowels: @bowels, moods: @moods, food_consumption: @food_consumption}
   end
 
