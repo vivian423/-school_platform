@@ -17,6 +17,7 @@ Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
 Event.destroy_all
+Announcements.destroy_all
 
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
@@ -234,37 +235,86 @@ oner_seed.save
 
   # fiver_seed.kid = kid_five
   # fiver_seed.save
-  # firsta_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-  # firsta_seed.user = teacher
-  # firsta_seed.save
 
-  # seconda_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-  # seconda_seed.user = teacher
-  # seconda_seed.save
 
-  # thirda_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-  # thirda_seed.user = user_three
-  # thirda_seed.save
-
-  # fourtha_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-     # fourtha_seed.user = user_four
-     # fourtha_seed.save
-
+  #
 chatroom_max = Chatroom.new(name: "Max's chatroom")
 chatroom_max.kid = max
 chatroom_max.save!
+
+firsta_seed = Announcement.new(
+     title: '',
+     content: ''
+   )
+   firsta_seed.user = teacher
+   firsta_seed.save
+
+   seconda_seed = Announcement.new(
+     title: '',
+     content: ''
+   )
+   seconda_seed.user = teacher
+   seconda_seed.save
+
+   thirda_seed = Announcement.new(
+     title: '',
+     content: ''
+   )
+   thirda_seed.user = user_three
+   thirda_seed.save
+
+   fourtha_seed = Announcement.new(
+     title: '',
+     content: ''
+   )
+      fourtha_seed.user = user_four
+      fourtha_seed.save
+
+      fiftha_seed = Announcement.new(
+          title: '',
+           content: ''
+         )
+         fiftha_seed.user = teacher
+         fiftha_seed.save
+
+         sixtha_seed = Announcement.new(
+           title: '',
+           content: ''
+         )
+         sixtha_seed.user = teacher
+         sixtha_seed.save
+
+         seventha_seed = Announcement.new(
+           title: '',
+           content: ''
+         )
+         seventha_seed.user = user_three
+         seventha_seed.save
+
+         eightha_seed = Announcement.new(
+           title: '',
+           content: ''
+         )
+         eightha_seed.user = user_three
+         eightha_seed.save
+
+         tentha_seed = Announcement.new(
+          title: '',
+          content: ''
+        )
+        tentha_seed.user = user_three
+        eightha_seed.save
+
+        eightha_seed = Announcement.new(
+          title: '',
+          content: ''
+        )
+        eightha_seed.user = user_three
+        eightha_seed.save
+           # fourtha_seed.user = user_four
+           # fourtha_seed.save
+
+
 
 photos_array = [
    "https://images.unsplash.com/photo-1587616211892-f743fcca64f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
@@ -285,4 +335,6 @@ photos_array.each do |photo_url|
   photo.save
   counter += 1
 end
+
+
 puts "... seeds created ..."
