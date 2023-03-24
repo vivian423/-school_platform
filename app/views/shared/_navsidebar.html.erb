@@ -28,8 +28,8 @@
       </div>
 
       <div class="nav-item align-middle">
-        <%= link_to chatroom_path(Chatroom.last), class: "nav-link" do %>
-          <% if current_page?(chatroom_path(Chatroom.last)) %>
+        <%= link_to chatroom_path(Chatroom.first), class: "nav-link" do %>
+          <% if current_page?(chatroom_path(Chatroom.first)) %>
             <div class="on-page">
               <%= inline_svg_tag "icons/messages-white.svg" %>
             </div>
