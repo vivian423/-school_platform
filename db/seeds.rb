@@ -18,7 +18,6 @@ Kid.destroy_all
 User.destroy_all
 Event.destroy_all
 
-
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
 
@@ -111,9 +110,9 @@ first_seed = Activity.new(
   date: Time.strptime('03/20/2023 17:00', '%m/%d/%Y %H:%M'),
   overall_mood: 'normal'
 )
-  first_seed.kid = max
-  first_seed.user = teacher
-  first_seed.save!
+first_seed.kid = max
+first_seed.user = teacher
+first_seed.save!
 
 second_seed = Activity.new(
   bowel_movement: 2,
@@ -139,9 +138,9 @@ third_seed = Activity.new(
   lunch_consumption: 'most',
   overall_mood: 'Happy overall'
 )
-  third_seed.kid = max
-  third_seed.user = teacher_ana
-  third_seed.save!
+third_seed.kid = max
+third_seed.user = teacher_ana
+third_seed.save!
 
 fourth_seed = Activity.new(
   bowel_movement: 0,
@@ -153,9 +152,9 @@ fourth_seed = Activity.new(
   lunch_consumption: 'all',
   overall_mood: 'Happy overall'
 )
-  fourth_seed.kid = max
-  fourth_seed.user = teacher_ana
-  fourth_seed.save!
+fourth_seed.kid = max
+fourth_seed.user = teacher_ana
+fourth_seed.save!
 
 fifth_activity = Activity.new(
   bowel_movement: 1,
@@ -197,21 +196,19 @@ seventh_activity = Activity.new(
   overall_mood: 'Happy overall'
 )
 
-  seventh_activity.kid_id = max.id
-  seventh_activity.save
+seventh_activity.kid_id = max.id
+seventh_activity.save
 
+oner_seed = Room.new(
+  name: 'Precious gems'
+)
+oner_seed.kid = max
+oner_seed.user = teacher
+oner_seed.save
 
-  #ROOM
-  oner_seed = Room.new(
-    name: 'Precious gems'
-  )
-  oner_seed.kid = max
-  oner_seed.user = teacher
-  oner_seed.save
-
-  twor_seed = Room.new(
-    name: 'Golden elephant'
-  )
+  # twor_seed = Room.new(
+  # name: 'Golden elephant'
+  # )
 
   # twor_seed.kid = kid_two
   # twor_seed.user = teacher
@@ -237,8 +234,6 @@ seventh_activity = Activity.new(
 
   # fiver_seed.kid = kid_five
   # fiver_seed.save
-
-  #Announcements
   # firsta_seed = Announcement.new(
   #   title: '',
   #   content: ''
@@ -264,27 +259,30 @@ seventh_activity = Activity.new(
   #   title: '',
   #   content: ''
   # )
-  # fourtha_seed.user = user_four
-  # fourtha_seed.save
+     # fourtha_seed.user = user_four
+     # fourtha_seed.save
 
 chatroom_max = Chatroom.new(name: "Max's chatroom")
 chatroom_max.kid = max
 chatroom_max.save!
 
 photos_array = [
-  "https://images.unsplash.com/photo-1587616211892-f743fcca64f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1597413545419-4013431dbfec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1600880291319-1a7499c191e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1630465651806-09682f8364b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
-  "https://images.unsplash.com/photo-1564429238817-393bd4286b2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2luZGVyZ2FydGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60.jpg"
+   "https://images.unsplash.com/photo-1587616211892-f743fcca64f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1597413545419-4013431dbfec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1600880291319-1a7499c191e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1630465651806-09682f8364b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1564429238817-393bd4286b2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2luZGVyZ2FydGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60.jpg"
 ]
+counter = 0
 photos_array.each do |photo_url|
   file = URI.open(photo_url)
-  photo = Photo.create!
-  photo.photo.attach(io: file, filename: "a.png", content_type: "image/png")
+  photo = Photo.create
+  photo.photo.attach(io: file, filename: "kids_" + counter.to_s + ".png", content_type: "image/png")
+  photo.save
+  counter += 1
 end
 puts "... seeds created ..."
