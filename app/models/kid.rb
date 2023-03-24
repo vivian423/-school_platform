@@ -1,4 +1,5 @@
 class Kid < ApplicationRecord
+  has_many :chatrooms, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_many :photos, through: :tags, dependent: :destroy
   has_many :parents, dependent: :destroy
