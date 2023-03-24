@@ -7,14 +7,14 @@
 
 
 
-<% if policy(Photo).new? %>
-  <%= simple_form_for(@photo) do |f| %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
+<%# if policy(Photo).new? %>
+  <%# simple_form_for(@photo) do |f| %>
+    <%# f.input :photo, as: :file %>
+    <%# f.submit %>
+  <%# end %>
+<%# end %>
 
-    <%# <%= link_to "Upload a new photo", new_photo_path, class: "mt-2 btn btn-outline-primary" %>
+<%# <%= link_to "Upload a new photo", new_photo_path, class: "mt-2 btn btn-outline-primary" %>
 
 <div class="container no-padding-top">
   <div class="row">
@@ -49,21 +49,20 @@
           <div class="info-child">
             <div id="info-child-child-name">
               Emily
+            </div>
             <div id="info-child-date">
               24th March,2023
-
-            </div>
             </div>
           </div>
           <%= image_tag "https://ionicframework.com/docs/img/demos/avatar.svg", class: "avatar-large" %>
         </div>
+
       <div class="image-gallery-sidebar">
          <% @photos.each do |photo| %>
           <%= cl_image_tag photo.photo.key, height: 100 %>
         <% end %>
-
-
       </div>
+
     </div>
   </div>
 </div>
