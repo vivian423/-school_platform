@@ -8,7 +8,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def show?
-
+    true
   end
 
   def new?
