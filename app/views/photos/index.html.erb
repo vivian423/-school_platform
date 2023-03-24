@@ -15,55 +15,45 @@
 <%# end %>
 
 <%# <%= link_to "Upload a new photo", new_photo_path, class: "mt-2 btn btn-outline-primary" %>
+<div class="images-container">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 
-<div class="container no-padding-top">
-  <div class="row">
-
-    <div class="col-12 col-lg-8 pt30">
-
-      <div class="images-container">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <% @photos.each_with_index do |e, index| %>
-            <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
-              <%= cl_image_tag e.photo.key, height: 600, width: 800, crop: :fill %>
-            </div>
-          <% end %>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      </div>
-    </div>
-      </div>
-
-    <div class="col-12 col-lg-4">
-     <div class="sidebar-images">
-           <div class="d-flex justify-content-between">
-          <div class="info-child">
-            <div id="info-child-child-name">
-              Emily
-            </div>
-            <div id="info-child-date">
-              24th March,2023
-            </div>
-          </div>
-          <%= image_tag "https://ionicframework.com/docs/img/demos/avatar.svg", class: "avatar-large" %>
+    <div class="carousel-inner">
+      <% @photos.each_with_index do |e, index| %>
+        <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
+          <%= cl_image_tag e.photo.key, height: 720, width: 800, crop: :fill, class: "img-slide" %>
         </div>
+      <% end %>
 
-      <div class="image-gallery-sidebar">
-         <% @photos.each do |photo| %>
-          <%= cl_image_tag photo.photo.key, height: 100 %>
-        <% end %>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
 
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
   </div>
 </div>
+
+<div class="sidebar">
+
+  <div class="scrollable-div">
+    <div class="child-info">
+     <h3 class="info-child-child-name">Max</h3>
+     <p class="info-child-date">24th March,2023</p>
+    </div>
+
+    <div class="img-grid">
+      <div class="image-gallery-grid">
+         <% @photos.each do |photo| %>
+          <%= cl_image_tag photo.photo.key, height: 100, class: "sidebar-images" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>

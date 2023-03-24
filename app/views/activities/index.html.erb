@@ -69,7 +69,7 @@ data-activities-dates-value="<%= @five_dates %>">
   <div class="scrollable-div">
     <% @activities.each do |activity| %>
       <div class="activity-log">
-        <h2 class="activity-log-header"><%= activity.date.strftime("%A, %B %e, %Y") %></h2>
+        <h3 class="activity-log-header"><%= activity.date.strftime("%A, %B %e, %Y") %></h3>
         <h3 class="card-headers">Snacks</h3>
         <div class="info-card">
           <p><%= activity.snack %></p>

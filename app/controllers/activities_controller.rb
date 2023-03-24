@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
     @five_snack_consumption = @snack_consumption.last(5)
     @five_lunch_consumption = @lunch_consumption.last(5)
 
-        # @five_snack_consumption = @
+    # @five_snack_consumption = @
     # @values = {naps: @naps, bowels: @bowels, moods: @moods, food_consumption: @food_consumption}
   end
 
