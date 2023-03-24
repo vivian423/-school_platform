@@ -7,9 +7,6 @@ import { application } from "./application"
 import ActivitiesController from "./activities_controller"
 application.register("activities", ActivitiesController)
 
-import ChangeiconsController from "./changeicons_controller"
-application.register("changeicons", ChangeiconsController)
-
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
