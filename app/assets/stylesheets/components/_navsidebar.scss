@@ -20,11 +20,13 @@
   row-gap: 20px;
 }
 
-.nav-link:active{
-  background-color:#007B4E;
-  border-radius: 65px;
+.nav-link.active{
+  background-color:#007B4E !important;
+  border-radius: 65px !important;
 
 }
+
+
 
 
 
