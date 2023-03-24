@@ -1,38 +1,38 @@
-<div class="navbar min-vh-100">
+<div class="navbar min-vh-100" data-controller = "changeicons" >
   <div class="col-auto d-flex flex-column ">
     <div class="nav nav-pills flex-column align-items-sm-start" id="menu">
       <div class="nav-item align-middle">
-        <%= link_to dashboard_path, class: "nav-link"  do %>
+        <%= link_to dashboard_path, class: "nav-link", data:{changeicons_target:"icon", action:"click->changeicons#color" }  do %>
         <%= inline_svg_tag "icons/home.svg" %>
         <% end %>
       </div>
       <div class="nav-item align-middle">
-        <%= link_to activities_path, class: "nav-link"  do %>
+        <%= link_to activities_path, class: "nav-link", data:{changeicons_target:"icon", action:"click->changeicons#color" } do %>
         <%= inline_svg_tag "icons/activities.svg" %>
         <% end %>
       </div>
       <div class="nav-item align-middle">
-        <%= link_to chatroom_path(Chatroom.find(1)), class: "nav-link"  do %>
+        <%= link_to chatroom_path(Chatroom.find(1)), class: "nav-link",data:{changeicons_target:"icon", action:"click->changeicons#color" }  do %>
         <%= inline_svg_tag "icons/messages.svg" %>
         <% end %>
       </div>
       <div class="nav-item align-middle">
-        <%= link_to photos_path, class: "nav-link"  do %>
+        <%= link_to photos_path, class: "nav-link" , data:{changeicons_target:"icon", action:"click->changeicons#color" }  do %>
         <%= inline_svg_tag "icons/galery.svg" %>
         <% end %>
       </div>
       <div class="nav-item align-middle">
-        <%= link_to root_path, class: "chatroom"  do %>
+        <%= link_to activities_path, class: "nav-link", data:{changeicons_target:"icon", action:"click->changeicons#color" }  do %>
         <%= inline_svg_tag "icons/records.svg" %>
         <% end %>
       </div>
       <div class="nav-item align-middle">
-        <%= link_to root_path, class: "nav-link"  do %>
+        <%= link_to root_path, class: "nav-link", data:{changeicons_target:"icon", action:"click->changeicons#color" }  do %>
         <%= inline_svg_tag "icons/calendar.svg" %>
         <% end %>
       </div>
       <div class="nav-item align-middle">
-        <%= link_to root_path, class: "nav-link"  do %>
+        <%= link_to root_path, class: "nav-link", data:{changeicons_target:"icon", action:"click->changeicons#color" }  do %>
         <%= inline_svg_tag "icons/settings.svg" %>
         <% end %>
       </div>
