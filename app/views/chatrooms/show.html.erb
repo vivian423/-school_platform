@@ -1,7 +1,4 @@
-<div class="container-page">
-
-  <div id="navsidebar">
-  </div>
+<div class="chatroom-container">
 
   <div class="chatroom" data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
@@ -24,16 +21,16 @@
     <% end %>
   </div>
 
-  <div id="sidebar-chatroom">
-    <ul class="chatroom-sidebar">
-      <li class= "chatroom-sidebar-child-name">
-        Max
-      </li>
-      <li>
-        Nido | Ms Mary
-      </li>
-    </ul>
-      <%= image_tag 'max.jpeg', class:"avatar-sidebar-chatroom" %>
-  </div>
+</div>
 
+<div id="sidebar-chatroom">
+  <ul class="chatroom-sidebar">
+    <li class= "chatroom-sidebar-child-name">
+      Max
+    </li>
+    <li>
+      Nido | Ms Mary
+    </li>
+  </ul>
+    <%= image_tag 'max.jpeg', class:"avatar-sidebar-chatroom" %>
 </div>
