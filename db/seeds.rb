@@ -31,35 +31,45 @@ teacher = User.create(first_name: " Ms Mary", last_name: "White", password: "123
 
 teacher_ana = User.create(first_name: " Ms Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
 
-firste_seed = Meeting.create(
-  name: 'Easter holiday - no school',
-  start_date: Time.strptime('04/06/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M'),
+meeting_one = Meeting.new(
+  name: 'Easter holiday - school closed',
+  start_time: Time.strptime('04/06/2023 09:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M')
 )
+meeting_one.user = teacher_ana
+meeting_one.save!
 
-seconde_seed = Meeting.create(
+meeting_two = Meeting.new(
   name: 'Sports day',
-  start_date: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M'),
+  start_time: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M')
 )
+meeting_two.user = teacher_ana
+meeting_two.save!
 
-thirde_seed = Meeting.create(
+meeting_three = Meeting.new(
   name: 'Carnival',
-  start_date: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M'),
+  start_time: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M')
 )
+meeting_three.user = teacher_ana
+meeting_three.save!
 
-fourthe_seed = Meeting.create(
+meeting_four = Meeting.new(
   name: 'Halloween',
-  start_date: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M'),
+  start_time: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M')
  )
+meeting_four.user = teacher_ana
+meeting_four.save!
 
-last_seed = Meeting.create(
+meeting_five = Meeting.new(
   name: "Lucy's birthday",
-  start_date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M'),
+  start_time: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M')
  )
+meeting_five.user = teacher_ana
+meeting_five.save!
 
 # KIDS
 max = Kid.create(
@@ -81,27 +91,27 @@ brad = Kid.create(
 parent_relationship_a = Parent.new
 parent_relationship_a.user_id = parent.id
 parent_relationship_a.kid_id = max.id
-parent_relationship_a.save
+parent_relationship_a.save!
 
 parent_relationship_b = Parent.new
 parent_relationship_b.user_id = parent_paul.id
 parent_relationship_b.kid_id = max.id
-parent_relationship_b.save
+parent_relationship_b.save!
 
 parent_relationship_c = Parent.new
 parent_relationship_c.user_id = parent_paul.id
 parent_relationship_c.kid_id = lucy.id
-parent_relationship_c.save
+parent_relationship_c.save!
 
 parent_relationship_d = Parent.new
 parent_relationship_d.user_id = parent.id
 parent_relationship_d.kid_id = lucy.id
-parent_relationship_d.save
+parent_relationship_d.save!
 
 parent_relationship_e = Parent.new
 parent_relationship_e.user_id = parent_three.id
 parent_relationship_e.kid_id = brad.id
-parent_relationship_e.save
+parent_relationship_e.save!
 
 # kid_three = Kid.create(
 #   first_name: 'Lucas',
