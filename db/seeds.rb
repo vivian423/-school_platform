@@ -17,51 +17,49 @@ Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
 Event.destroy_all
+Meeting.destroy_all
 Announcement.destroy_all
 
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
 
-parent_paul = User.create(first_name: "Paul", last_name: "Petterson", password: "123456", email: "marry@marry.com", teacher: false)
+parent_paul = User.create(first_name: "Paul", last_name: "Petterson", password: "123456", email: "parent2@parent.com", teacher: false)
+
+parent_three = User.create(first_name: "Fernando", last_name: "Domingo", password: "123456", email: "parent3@parent.com", teacher: false)
 
 teacher = User.create(first_name: " Ms Mary", last_name: "White", password: "123456", email: "teacher@teacher.com", teacher: true)
 
 teacher_ana = User.create(first_name: " Ms Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
 
-firste_seed = Event.create(
-  title: 'Easter',
-  start_date: Time.strptime('04/07/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('04/09/2023 15:00', '%m/%d/%Y %H:%M'),
-  description: 'Easter Egg Lace Card, Egg and Spoon Race, Eggs for Fun, Easter Coloring Eggs Activity.'
+firste_seed = Meeting.create(
+  name: 'Easter holiday - no school',
+  start_date: Time.strptime('04/06/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_date: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M'),
 )
 
-seconde_seed = Event.create(
-  title: 'Sports day',
+seconde_seed = Meeting.create(
+  name: 'Sports day',
   start_date: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
   end_date: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M'),
-  description: 'Gymnastics, Swimming, Biking, Karate, Soccer.'
 )
 
-thirde_seed = Event.create(
-  title: 'Carnival',
+thirde_seed = Meeting.create(
+  name: 'Carnival',
   start_date: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
   end_date: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M'),
-  description: 'Popcorn counting printable, Elephant toothpaste explosion experiment, Carnival alphabet sensory bin.'
 )
 
-fourthe_seed = Event.create(
-  title: 'Halloween',
+fourthe_seed = Meeting.create(
+  name: 'Halloween',
   start_date: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
   end_date: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M'),
-  description: 'Skeleton Letters, Halloween Writing Center, Halloween Color Clip, Trick-or-Treat Numbers.'
-)
+ )
 
-last_seed = Event.create(
-  title: "Mark's birthday",
+last_seed = Meeting.create(
+  name: "Lucy's birthday",
   start_date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
   end_date: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M'),
-  description: 'Mark turns 2!'
-)
+ )
 
 # KIDS
 max = Kid.create(
@@ -69,9 +67,14 @@ max = Kid.create(
   last_name: 'Ortega'
 )
 
-kid_two = Kid.create(
-  first_name: 'Mark',
-  last_name: 'Begu'
+lucy = Kid.create(
+  first_name: 'Lucy',
+  last_name: 'Ortega'
+)
+
+brad = Kid.create(
+  first_name: 'Brad',
+  last_name: 'Soon'
 )
 
 # PARENTS
@@ -84,6 +87,21 @@ parent_relationship_b = Parent.new
 parent_relationship_b.user_id = parent_paul.id
 parent_relationship_b.kid_id = max.id
 parent_relationship_b.save
+
+parent_relationship_c = Parent.new
+parent_relationship_c.user_id = parent_paul.id
+parent_relationship_c.kid_id = lucy.id
+parent_relationship_c.save
+
+parent_relationship_d = Parent.new
+parent_relationship_d.user_id = parent.id
+parent_relationship_d.kid_id = lucy.id
+parent_relationship_d.save
+
+parent_relationship_e = Parent.new
+parent_relationship_e.user_id = parent_three.id
+parent_relationship_e.kid_id = brad.id
+parent_relationship_e.save
 
 # kid_three = Kid.create(
 #   first_name: 'Lucas',
@@ -235,6 +253,14 @@ oner_seed.save
 chatroom_max = Chatroom.new(name: "Max's chatroom")
 chatroom_max.kid = max
 chatroom_max.save!
+
+chatroom_lucy = Chatroom.new(name: "Lucy's chatroom")
+chatroom_lucy.kid = lucy
+chatroom_lucy.save!
+
+chatroom_brad = Chatroom.new(name: "Brad's chatroom")
+chatroom_brad.kid = brad
+chatroom_brad.save!
 
 firsta_seed = Announcement.new(
   title: 'Parents-teacher personal meeting',
