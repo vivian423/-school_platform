@@ -15,28 +15,15 @@
       </div>
 
       <div class="nav-item align-middle">
-        <%= link_to root_path, class: "nav-link" do %>
-        <%# should be announcments %>
-          <% if current_page?(root_path) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/activities-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/activities.svg" %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%= link_to chatroom_path(Chatroom.last), class: "nav-link" do %>
-          <% if current_page?(chatroom_path(Chatroom.last)) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/messages-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/messages.svg" %>
-          <% end %>
-        <% end %>
+        <%# <%= link_to chatrooms_path, class: "nav-link" do %>
+          <%# <% if current_page?(chatrooms_path) %>
+            <%# <div class="on-page"> %>
+              <%# <%= inline_svg_tag "icons/messages-white.svg" %>
+            <%# </div> %>
+          <%# <% else %>
+            <%# <%= inline_svg_tag "icons/messages.svg" %>
+          <%# <% end %>
+        <%# <% end %>
       </div>
 
       <div class="nav-item align-middle">
@@ -64,7 +51,7 @@
       </div>
 
       <div class="nav-item align-middle">
-        <%= link_to root_path, class: "nav-link" do %>
+        <%= link_to meetings_index_path, class: "nav-link" do %>
         <%= inline_svg_tag "icons/calendar.svg" %>
         <% end %>
       </div>
@@ -73,6 +60,12 @@
         <%= link_to root_path, class: "nav-link" do %>
         <%= inline_svg_tag "icons/settings.svg" %>
         <% end %>
+      </div>
+
+      <div class="nav-item align-middle">
+      <%= button_to destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "nav-link" do %>
+        <%= inline_svg_tag "icons/sign-out.svg" %>
+      <% end %>
       </div>
 
     </div>
