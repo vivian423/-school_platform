@@ -15,28 +15,15 @@
       </div>
 
       <div class="nav-item align-middle">
-        <%= link_to root_path, class: "nav-link" do %>
-        <%# should be announcments %>
-          <% if current_page?(root_path) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/activities-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/activities.svg" %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%= link_to chatroom_path(Chatroom.first), class: "nav-link" do %>
-          <% if current_page?(chatroom_path(Chatroom.first)) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/messages-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/messages.svg" %>
-          <% end %>
-        <% end %>
+        <%# <%= link_to chatrooms_path, class: "nav-link" do %>
+          <%# <% if current_page?(chatrooms_path) %>
+            <%# <div class="on-page"> %>
+              <%# <%= inline_svg_tag "icons/messages-white.svg" %>
+            <%# </div> %>
+          <%# <% else %>
+            <%# <%= inline_svg_tag "icons/messages.svg" %>
+          <%# <% end %>
+        <%# <% end %> 
       </div>
 
       <div class="nav-item align-middle">
