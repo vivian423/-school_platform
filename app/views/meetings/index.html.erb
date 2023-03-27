@@ -1,15 +1,17 @@
-<div class="container ml-7">
+<div class="meeting-container">
 
-<h1>Calendar</h1>
+  <div class="h5"> Calendar </div>
 
-  <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
-    <%= date %>
+  <div class="calendar">
 
-    <% meetings.each do |meeting| %>
-      <div class="meeting">
-        <p><%= meeting.name %></p>
-      </div>
+    <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+      <%= date %>
+
+      <% meetings.each do |meeting| %>
+        <div class="meeting">
+          <p><%= meeting.name %></p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-
+  </div>
 </div>

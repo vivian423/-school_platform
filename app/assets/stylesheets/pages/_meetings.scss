@@ -1,4 +1,38 @@
 // imported from simple calendar gem
+.meeting-container {
+  background-color: white;
+  margin: 80px 80px 80px 190px;
+  border-radius: 30px;
+  border: 0.25rem solid black;
+  padding: 30px;
+  height: 100vh;
+  min-width: 80%;
+  display: inline-block;
+  justify-content: center;
+  font-family: 'Mulish', sans-serif;
+
+  h5 {
+    font-family: 'Mulish', sans-serif;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    }
+  }
+
+  .calendar-title {
+    font-weight: bold;
+  }
+
+  .calendar-heading {
+    display: inline-flex;
+
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
 
 .simple-calendar {
   table {
@@ -8,9 +42,10 @@
     border: 1px solid rgb(221, 221, 221);
     border-collapse: collapse;
     box-sizing: border-box;
-    max-width: 100%;
-    width: 100%;
+    width: 70%;
+    max-width: 700px;
     min-height: 80vh;
+    font-family: 'Mulish', sans-serif;
   }
   .today {
     background-color: #FAF3DD;
@@ -35,6 +70,8 @@
     padding: 6px;
     vertical-align: top;
     width: 14%;
+    font-size: 12px;
+    font-weight: bold;
 
     border: 1px solid #ddd;
     border-top-color: rgb(221, 221, 221);
@@ -86,12 +123,20 @@
 .meeting {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #1edd87d8;
+  border-radius: 8px;
+  background: #E9533E;
   transition: background 0.3s ease;
 }
 
 .meeting:hover {
-  background: #1BCB7F;
+  background: #e9523ee2;
   color: white;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

@@ -64,9 +64,9 @@ meeting_four.user = teacher_ana
 meeting_four.save!
 
 meeting_five = Meeting.new(
-  name: "Lucy's birthday",
-  start_time: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_time: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M')
+  name: "Lucy's birthday!",
+  start_time: Time.strptime('03/31/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('03/31/2023 15:00', '%m/%d/%Y %H:%M')
  )
 meeting_five.user = teacher_ana
 meeting_five.save!
@@ -226,14 +226,53 @@ seventh_activity = Activity.new(
 )
 
 seventh_activity.kid_id = max.id
-seventh_activity.save
+seventh_activity.save!
 
-oner_seed = Room.new(
+eighth_activity = Activity.new(
+  bowel_movement: 1,
+  nap_duration: 120,
+  snack: 'Cheese croissant',
+  lunch: 'Meatloaf and mashed potatoes',
+  date: Time.strptime('03/29/2023 17:00', '%m/%d/%Y %H:%M'),
+  snack_consumption: 'all',
+  lunch_consumption: 'all',
+  overall_mood: 'Happy overall'
+)
+eighth_activity.kid_id = max.id
+eighth_activity.save!
+
+ninth_activity = Activity.new(
+  bowel_movement: 1,
+  nap_duration: 115,
+  snack: 'Banana and yoghurt',
+  lunch: 'Chicken and beans fried rice',
+  date: Time.strptime('03/30/2023 17:00', '%m/%d/%Y %H:%M'),
+  snack_consumption: 'all',
+  lunch_consumption: 'most',
+  overall_mood: 'Happy overall'
+)
+ninth_activity.kid_id = max.id
+ninth_activity.save!
+
+tenth_activity = Activity.new(
+  bowel_movement: 1,
+  nap_duration: 115,
+  snack: 'Sweet rice pudding',
+  lunch: 'Salmon and spaghetti',
+  date: Time.strptime('03/31/2023 17:00', '%m/%d/%Y %H:%M'),
+  snack_consumption: 'all',
+  lunch_consumption: 'little',
+  overall_mood: 'Happy overall'
+)
+tenth_activity.kid_id = max.id
+tenth_activity.save!
+
+room_seed = Room.new(
   name: 'Precious gems'
 )
-oner_seed.kid = max
-oner_seed.user = teacher
-oner_seed.save
+room_seed.kid = max
+room_seed.user = teacher
+room_seed.save!
 
   # twor_seed = Room.new(
   # name: 'Golden elephant'
