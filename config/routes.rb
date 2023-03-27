@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :activities
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: :index do
     resources :messages, only: :create
   end
 end
