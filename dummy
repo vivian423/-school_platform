@@ -1,13 +1,4 @@
-<<<<<<< Images_Seeds
-gem 'cloudinary'
-gem 'inline_svg'
-=======
 
->>>>>>> Creating_Index_For_Photos
-
-
-
-=======
 #<div class="d-none">
 <div class="container-fluid">
   <div class="row flex-nowwrap">
@@ -23,4 +14,3 @@ gem 'inline_svg'
                 <span class="ms-1 d-none d-sm-inline">Dashboard</span>
               </a>
             </li>
->>>>>>> Creating_Index_For_Photos
