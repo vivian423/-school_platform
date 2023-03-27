@@ -17,6 +17,7 @@ Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
 Event.destroy_all
+Announcement.destroy_all
 
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
@@ -231,40 +232,87 @@ oner_seed.save
   # fiver_seed = Room.new(
   #   name: 'Silver monkey'
   # )
-
-  # fiver_seed.kid = kid_five
-  # fiver_seed.save
-  # firsta_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-  # firsta_seed.user = teacher
-  # firsta_seed.save
-
-  # seconda_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-  # seconda_seed.user = teacher
-  # seconda_seed.save
-
-  # thirda_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-  # thirda_seed.user = user_three
-  # thirda_seed.save
-
-  # fourtha_seed = Announcement.new(
-  #   title: '',
-  #   content: ''
-  # )
-     # fourtha_seed.user = user_four
-     # fourtha_seed.save
-
 chatroom_max = Chatroom.new(name: "Max's chatroom")
 chatroom_max.kid = max
 chatroom_max.save!
+
+firsta_seed = Announcement.new(
+  title: 'Parents-teacher personal meeting',
+  content: 'We are happy to announce that first Parents-teacher meeting of the year is in next month. Send us message if the date and time suits to you or not',
+  date: Time.strptime('04/15/2023 17:00', '%m/%d/%Y %H:%M')
+)
+firsta_seed.user = parent_paul
+firsta_seed.save
+
+seconda_seed = Announcement.new(
+  title: 'Annual day',
+  content: 'All parents are invited in the Annual day that is going to happen in our auditorium.',
+  date: Time.strptime('04/30/2023 16:00', '%m/%d/%Y %H:%M')
+)
+seconda_seed.user = parent
+seconda_seed.save
+thirda_seed = Announcement.new(
+  title: 'Photo-session day',
+  content: 'All the parents are inforemed that we are    oraganising a photo-session day so all kids should be in nice and fine clothes with the theme of yellow color.',date: Time.strptime('03/28/2023 09:00', '%m/%d/%Y %H:%M')
+)
+thirda_seed.user = parent
+thirda_seed.save
+
+fourtha_seed = Announcement.new(
+  title: 'Welcome day for Miss Polly',
+  content: 'We are happy to announce that a new teacher, named Miss Polly is going to join our kindergarten.',
+  date: Time.strptime('04/01/2023 08:00', '%m/%d/%Y %H:%M')
+)
+fourtha_seed.user = teacher
+fourtha_seed.save
+
+fiftha_seed = Announcement.new(
+  title: 'Easter Holiday',
+  content: 'Due to the occasion of Easter, kindergarten will be closed for 4 days.',
+  date: Time.strptime('03/31/2023 11:00', '%m/%d/%Y %H:%M')
+)
+fiftha_seed.user = teacher
+fiftha_seed.save
+
+sixtha_seed = Announcement.new(
+  title: 'Changes in lunch time',
+  content: 'We are changing the lunch time that was earlier 12pm. Now it would be from 11am.',
+  date: Time.strptime('01/01/2023 11:00', '%m/%d/%Y %H:%M')
+)
+sixtha_seed.user = parent
+sixtha_seed.save
+
+seventha_seed = Announcement.new(
+  title: 'Changes in pickup time',
+  content: 'Due to lack of teachers, we are reducing the kindergartens timings. It is now from 8am to 2 pm.',
+  date: Time.strptime('10/10/2023 08:00', '%m/%d/%Y %H:%M')
+)
+seventha_seed.user = parent
+seventha_seed.save
+
+eightha_seed = Announcement.new(
+  title: 'Welcome day for a new kid',
+  content: 'Its being pleasure to announce that a new kid, named Tom Anderson is ready to join our kindergarten very soon. We are eagerly waiting for him.',
+  date: Time.strptime('05/01/2023 09:00', '%m/%d/%Y %H:%M')
+)
+eightha_seed.user = teacher
+eightha_seed.save
+
+nintha_seed = Announcement.new(
+  title: 'Repairing work in outer area',
+  content: 'Due to repairing work in outer front area, this is request from the parents to use back area to drop and pick the kids.',
+  date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M')
+)
+nintha_seed.user = parent
+nintha_seed.save
+
+tentha_seed = Announcement.new(
+  title: 'Now its Easter soon',
+  content: 'As the Easter is coming soon so all kids must bring a yellow box with them, made up of glass.',
+  date: Time.strptime('03/29/2023 12:00', '%m/%d/%Y %H:%M')
+)
+tentha_seed.user = parent
+tentha_seed.save
 
 photos_array = [
    "https://images.unsplash.com/photo-1587616211892-f743fcca64f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
@@ -285,4 +333,6 @@ photos_array.each do |photo_url|
   photo.save
   counter += 1
 end
+
+
 puts "... seeds created ..."
