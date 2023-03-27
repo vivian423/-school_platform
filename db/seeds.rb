@@ -31,35 +31,35 @@ teacher = User.create(first_name: " Ms Mary", last_name: "White", password: "123
 
 teacher_ana = User.create(first_name: " Ms Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
 
-firste_seed = Meeting.create(
-  name: 'Easter holiday - no school',
-  start_date: Time.strptime('04/06/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M'),
-)
+# first_seed = Meeting.create(
+#   name: 'Easter holiday - no school',
+#   start_date: Time.strptime('04/06/2023 08:00', '%m/%d/%Y %H:%M'),
+#   end_date: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M'),
+# )
 
-seconde_seed = Meeting.create(
-  name: 'Sports day',
-  start_date: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M'),
-)
+# second_seed = Meeting.create(
+#   name: 'Sports day',
+#   start_date: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
+#   end_date: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M'),
+# )
 
-thirde_seed = Meeting.create(
-  name: 'Carnival',
-  start_date: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M'),
-)
+# third_seed = Meeting.create(
+#   name: 'Carnival',
+#   start_date: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
+#   end_date: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M'),
+# )
 
-fourthe_seed = Meeting.create(
-  name: 'Halloween',
-  start_date: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M'),
- )
+# fourth_seed = Meeting.create(
+#   name: 'Halloween',
+#   start_date: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
+#   end_date: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M'),
+#  )
 
-last_seed = Meeting.create(
-  name: "Lucy's birthday",
-  start_date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
-  end_date: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M'),
- )
+# last_seed = Meeting.create(
+#   name: "Lucy's birthday",
+#   start_date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
+#   end_date: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M'),
+#  )
 
 # KIDS
 max = Kid.create(
