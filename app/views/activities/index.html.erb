@@ -70,7 +70,7 @@ data-activities-dates-value="<%= @five_dates %>">
     <% @activities.each do |activity| %>
       <div class="activity-log">
         <h3 class="activity-log-header"><%= activity.date.strftime("%A, %B %e, %Y") %></h3>
-        <h3 class="card-headers">Snacks</h3>
+        <h3 class="card-headers">Snack</h3>
         <div class="info-card">
           <p><%= activity.snack %></p>
           <p><strong>Eaten: </strong><%= activity.snack_consumption %></p>

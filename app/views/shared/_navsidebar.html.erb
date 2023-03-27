@@ -75,6 +75,12 @@
         <% end %>
       </div>
 
+      <div class="nav-item align-middle">
+      <%= button_to destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "nav-link" do %>
+        <%= inline_svg_tag "icons/sign-out.svg" %>
+      <% end %>
+      </div>
+
     </div>
   </div>
 </div>
