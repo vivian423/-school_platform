@@ -2,10 +2,10 @@
   data-chatroom-subscription-chatroom-id-value="<%= chatroom&.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <h1>#<%= chatroom&.name %></h1>
+  <h1><%= chatroom&.name %><%= image_tag 'chatparent', class:"logo-profile" %></h1>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% chatroom&.messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div  class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
           <%= render "messages/message", message: message %>
         </div>

@@ -1,17 +1,16 @@
-<div class="chatroom-container">
+ <div class="content-wrapper">
 
-  <%= render "chatrooms/chat", chatroom: @chatroom, message: @message %>
+    <%= render "chatrooms/chat", chatroom: @chatroom, message: @message %>
 
-</div>
-
-<div id="sidebar-chatroom">
-  <ul class="chatroom-sidebar">
-    <li class= "chatroom-sidebar-child-name">
-      Max
-    </li>
-    <li>
-      Nido | Ms Mary
-    </li>
-  </ul>
-    <%= image_tag 'max.png', class:"avatar-sidebar-chatroom" %>
+  <div id="sidebar-chatroom">
+    <ul class="chatroom-sidebar">
+      <li class= "chatroom-sidebar-child-name">
+        Max
+      </li>
+      <li>
+        Nido | Ms Mary
+      </li>
+    </ul>
+      <%= image_tag 'max.png', class:"avatar-sidebar-chatroom" %>
+  </div>
 </div>
