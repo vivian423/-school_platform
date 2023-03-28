@@ -14,10 +14,15 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   justify-content: center;
+  row-gap: 25px;
 }
 // css code for the list of icons inside the nav-sidebar
 #menu {
-  row-gap: 20px;
+  row-gap: 25px;
+  display: flex;
+  flex-direction: column;
+  columns: auto;
+  justify-content: center;
 }
 
 .nav-link.active{
