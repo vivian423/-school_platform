@@ -31,35 +31,45 @@ teacher = User.create(first_name: " Ms Mary", last_name: "White", password: "123
 
 teacher_ana = User.create(first_name: " Ms Ana", last_name: "Bennett", password: "123456", email: "ana@ana.com", teacher: true)
 
-# first_seed = Meeting.create(
-#   name: 'Easter holiday - no school',
-#   start_date: Time.strptime('04/06/2023 08:00', '%m/%d/%Y %H:%M'),
-#   end_date: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M'),
-# )
+meeting_one = Meeting.new(
+  name: 'Easter holiday - school closed',
+  start_time: Time.strptime('04/06/2023 09:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('04/10/2023 15:00', '%m/%d/%Y %H:%M')
+)
+meeting_one.user = teacher_ana
+meeting_one.save!
 
-# second_seed = Meeting.create(
-#   name: 'Sports day',
-#   start_date: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
-#   end_date: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M'),
-# )
+meeting_two = Meeting.new(
+  name: 'Sports day',
+  start_time: Time.strptime('04/21/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('04/21/2023 15:00', '%m/%d/%Y %H:%M')
+)
+meeting_two.user = teacher_ana
+meeting_two.save!
 
-# third_seed = Meeting.create(
-#   name: 'Carnival',
-#   start_date: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
-#   end_date: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M'),
-# )
+meeting_three = Meeting.new(
+  name: 'Carnival',
+  start_time: Time.strptime('09/30/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('09/30/2023 15:00', '%m/%d/%Y %H:%M')
+)
+meeting_three.user = teacher_ana
+meeting_three.save!
 
-# fourth_seed = Meeting.create(
-#   name: 'Halloween',
-#   start_date: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
-#   end_date: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M'),
-#  )
+meeting_four = Meeting.new(
+  name: 'Halloween',
+  start_time: Time.strptime('10/30/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('10/30/2023 15:00', '%m/%d/%Y %H:%M')
+ )
+meeting_four.user = teacher_ana
+meeting_four.save!
 
-# last_seed = Meeting.create(
-#   name: "Lucy's birthday",
-#   start_date: Time.strptime('03/27/2023 08:00', '%m/%d/%Y %H:%M'),
-#   end_date: Time.strptime('03/27/2023 15:00', '%m/%d/%Y %H:%M'),
-#  )
+meeting_five = Meeting.new(
+  name: "Lucy's birthday!",
+  start_time: Time.strptime('03/31/2023 08:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('03/31/2023 15:00', '%m/%d/%Y %H:%M')
+ )
+meeting_five.user = teacher_ana
+meeting_five.save!
 
 # KIDS
 max = Kid.create(
@@ -81,27 +91,27 @@ brad = Kid.create(
 parent_relationship_a = Parent.new
 parent_relationship_a.user_id = parent.id
 parent_relationship_a.kid_id = max.id
-parent_relationship_a.save
+parent_relationship_a.save!
 
 parent_relationship_b = Parent.new
 parent_relationship_b.user_id = parent_paul.id
 parent_relationship_b.kid_id = max.id
-parent_relationship_b.save
+parent_relationship_b.save!
 
 parent_relationship_c = Parent.new
 parent_relationship_c.user_id = parent_paul.id
 parent_relationship_c.kid_id = lucy.id
-parent_relationship_c.save
+parent_relationship_c.save!
 
 parent_relationship_d = Parent.new
 parent_relationship_d.user_id = parent.id
 parent_relationship_d.kid_id = lucy.id
-parent_relationship_d.save
+parent_relationship_d.save!
 
 parent_relationship_e = Parent.new
 parent_relationship_e.user_id = parent_three.id
 parent_relationship_e.kid_id = brad.id
-parent_relationship_e.save
+parent_relationship_e.save!
 
 # kid_three = Kid.create(
 #   first_name: 'Lucas',
@@ -216,14 +226,53 @@ seventh_activity = Activity.new(
 )
 
 seventh_activity.kid_id = max.id
-seventh_activity.save
+seventh_activity.save!
 
-oner_seed = Room.new(
+eighth_activity = Activity.new(
+  bowel_movement: 1,
+  nap_duration: 120,
+  snack: 'Cheese croissant',
+  lunch: 'Meatloaf and mashed potatoes',
+  date: Time.strptime('03/29/2023 17:00', '%m/%d/%Y %H:%M'),
+  snack_consumption: 'all',
+  lunch_consumption: 'all',
+  overall_mood: 'Happy overall'
+)
+eighth_activity.kid_id = max.id
+eighth_activity.save!
+
+ninth_activity = Activity.new(
+  bowel_movement: 1,
+  nap_duration: 115,
+  snack: 'Banana and yoghurt',
+  lunch: 'Chicken and beans fried rice',
+  date: Time.strptime('03/30/2023 17:00', '%m/%d/%Y %H:%M'),
+  snack_consumption: 'all',
+  lunch_consumption: 'most',
+  overall_mood: 'Happy overall'
+)
+ninth_activity.kid_id = max.id
+ninth_activity.save!
+
+tenth_activity = Activity.new(
+  bowel_movement: 1,
+  nap_duration: 115,
+  snack: 'Sweet rice pudding',
+  lunch: 'Salmon and spaghetti',
+  date: Time.strptime('03/31/2023 17:00', '%m/%d/%Y %H:%M'),
+  snack_consumption: 'all',
+  lunch_consumption: 'little',
+  overall_mood: 'Happy overall'
+)
+tenth_activity.kid_id = max.id
+tenth_activity.save!
+
+room_seed = Room.new(
   name: 'Precious gems'
 )
-oner_seed.kid = max
-oner_seed.user = teacher
-oner_seed.save
+room_seed.kid = max
+room_seed.user = teacher
+room_seed.save!
 
   # twor_seed = Room.new(
   # name: 'Golden elephant'
@@ -349,7 +398,14 @@ photos_array = [
    "https://images.unsplash.com/photo-1600880291319-1a7499c191e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
    "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
    "https://images.unsplash.com/photo-1630465651806-09682f8364b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
-   "https://images.unsplash.com/photo-1564429238817-393bd4286b2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2luZGVyZ2FydGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60.jpg"
+   "https://images.unsplash.com/photo-1564429238817-393bd4286b2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2luZGVyZ2FydGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1567746455504-cb3213f8f5b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80.jpg",
+   "https://images.unsplash.com/photo-1620398722262-969d8f2bc875?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8a2luZGVyZ2FydGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://plus.unsplash.com/premium_photo-1661380944248-8236fc4b3899?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://images.unsplash.com/photo-1601339434203-130259102db6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://plus.unsplash.com/premium_photo-1663108227137-807e0096af81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
+   "https://plus.unsplash.com/premium_photo-1661385843328-bc92c32529c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg"
 ]
 counter = 0
 photos_array.each do |photo_url|
