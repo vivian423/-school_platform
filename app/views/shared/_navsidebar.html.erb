@@ -1,73 +1,69 @@
 <div class="navbar min-vh-100">
-  <div class="col-auto d-flex flex-column ">
-    <div class="nav nav-pills flex-column align-items-sm-start" id="menu">
 
-      <div class="nav-item align-middle">
-        <%= link_to dashboard_path, class: "nav-link" do %>
-          <% if current_page?(dashboard_path) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/home-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/home.svg" %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%# <%= link_to chatrooms_path, class: "nav-link" do %>
-          <%# <% if current_page?(chatrooms_path) %>
-            <%# <div class="on-page"> %>
-              <%# <%= inline_svg_tag "icons/messages-white.svg" %>
-            <%# </div> %>
-          <%# <% else %>
-            <%# <%= inline_svg_tag "icons/messages.svg" %>
-          <%# <% end %>
-        <%# <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%= link_to photos_path, class: "nav-link" do %>
-          <% if current_page?(photos_path) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/galery-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/galery.svg" %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%= link_to activities_path, class: "nav-link" do %>
-          <% if current_page?(activities_path) %>
-            <div class="on-page">
-              <%= inline_svg_tag "icons/records-white.svg" %>
-            </div>
-          <% else %>
-            <%= inline_svg_tag "icons/records.svg" %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%= link_to meetings_index_path, class: "nav-link" do %>
-        <%= inline_svg_tag "icons/calendar.svg" %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-        <%= link_to root_path, class: "nav-link" do %>
-        <%= inline_svg_tag "icons/settings.svg" %>
-        <% end %>
-      </div>
-
-      <div class="nav-item align-middle">
-      <%= button_to destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "nav-link" do %>
-        <%= inline_svg_tag "icons/sign-out.svg" %>
+  <div class="nav-item align-middle">
+    <%= link_to dashboard_path, class: "nav-link" do %>
+      <% if current_page?(dashboard_path) %>
+        <div class="on-page">
+          <%= inline_svg_tag "icons/home-white.svg" %>
+        </div>
+      <% else %>
+        <%= inline_svg_tag "icons/home.svg" %>
       <% end %>
-      </div>
-
-    </div>
+    <% end %>
   </div>
+
+  <div class="nav-item align-middle">
+    <%= link_to chatrooms_path, class: "nav-link" do %>
+      <% if current_page?(chatrooms_path) %>
+        <div class="on-page">
+          <%= inline_svg_tag "icons/messages-white.svg" %>
+        </div>
+      <%  else %>
+        <%= inline_svg_tag "icons/messages.svg" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="nav-item align-middle">
+    <%= link_to photos_path, class: "nav-link" do %>
+      <% if current_page?(photos_path) %>
+        <div class="on-page">
+          <%= inline_svg_tag "icons/galery-white.svg" %>
+        </div>
+      <% else %>
+        <%= inline_svg_tag "icons/galery.svg" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="nav-item align-middle">
+    <%= link_to activities_path, class: "nav-link" do %>
+      <% if current_page?(activities_path) %>
+        <div class="on-page">
+          <%= inline_svg_tag "icons/records-white.svg" %>
+        </div>
+      <% else %>
+        <%= inline_svg_tag "icons/records.svg" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="nav-item align-middle">
+    <%= link_to meetings_index_path, class: "nav-link" do %>
+    <%= inline_svg_tag "icons/calendar.svg" %>
+    <% end %>
+  </div>
+
+  <div class="nav-item align-middle">
+    <%= link_to root_path, class: "nav-link" do %>
+    <%= inline_svg_tag "icons/settings.svg" %>
+    <% end %>
+  </div>
+
+  <div class="nav-item align-middle">
+  <%= button_to destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "nav-link" do %>
+    <%= inline_svg_tag "icons/sign-out.svg" %>
+  <% end %>
+  </div>
+
 </div>
