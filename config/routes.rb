@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
   get 'meetings/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
@@ -16,4 +17,6 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :index do
     resources :messages, only: :create
   end
+
+  match "*path", to: "errors#not_found", via: :all
 end
