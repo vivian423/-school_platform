@@ -226,6 +226,7 @@ seventh_activity = Activity.new(
 )
 
 seventh_activity.kid_id = max.id
+seventh_activity.user = teacher
 seventh_activity.save!
 
 eighth_activity = Activity.new(
@@ -239,6 +240,7 @@ eighth_activity = Activity.new(
   overall_mood: 'Happy overall'
 )
 eighth_activity.kid_id = max.id
+eighth_activity.user = teacher
 eighth_activity.save!
 
 ninth_activity = Activity.new(
@@ -252,6 +254,7 @@ ninth_activity = Activity.new(
   overall_mood: 'Happy overall'
 )
 ninth_activity.kid_id = max.id
+ninth_activity.user = teacher
 ninth_activity.save!
 
 tenth_activity = Activity.new(
@@ -265,6 +268,7 @@ tenth_activity = Activity.new(
   overall_mood: 'Happy overall'
 )
 tenth_activity.kid_id = max.id
+tenth_activity.user = teacher
 tenth_activity.save!
 
 room_seed = Room.new(
