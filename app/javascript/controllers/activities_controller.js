@@ -48,20 +48,30 @@ export default class extends Controller {
         datasets: [{
           label: 'nap time (minutes)',
           data: this.napsValue,
-          borderWidth: 1,
-          borderColor: '#007b4e',
-          backgroundColor: '#007b4e',
+          borderWidth: 3,
+          borderColor: 'black',
+          backgroundColor: '#FBCA1F',
           color: 'black',
         }]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: 20
+          }
+        }
         plugins: {
           legend: {
-             display: false, //This will do the task
+             display: false,
+             pointLabels: {
+              fontSize: 18,
+              fontFamily: "'Mulish', 'sans-serif'",
+              fontColor: 'black',
+              fontWeight: 900,
+            }
           }
-
         }
-
       }
     //   options: {
     //     legend: {
@@ -77,16 +87,26 @@ export default class extends Controller {
         datasets: [{
           label: 'bowel',
           data: this.bowelsValue,
-          borderWidth: 1,
-          borderColor: '#007b4e',
-          backgroundColor: '#007b4e',
+          borderWidth: 3,
+          borderColor: 'black',
+          backgroundColor: '#FBCA1F',
           color: 'black',
         }]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
-             display: false, //This will do the task
+             display: false,
+             labels: {
+              font: {
+                size: 18,
+                family: "'Mulish', 'sans-serif'",
+                color: 'black',
+                weight: 900,
+              }
+             }
           }
         },
         scales: {
