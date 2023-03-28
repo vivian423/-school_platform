@@ -1,102 +1,134 @@
-
-<div class="activities-grid-container"
-data-controller="activities"
-data-activities-naps-value="<%= @five_naps %>"
-data-activities-foods-value="<%= @food_consumption %>"
-data-activities-bowels-value="<%= @five_bowels %>"
-data-activities-moods-value="<%= @moods %>"
-data-activities-dates-value="<%= @five_dates %>">
-  <div class="grid-item">
-    <h3 class="card-headers">Nap Duration</h3>
-    <div class="chart-card">
-      <canvas class="chart-canvas" data-activities-target="nap"></canvas>
-    </div>
-  </div>
-  <div class="grid-item">
-    <h3 class="card-headers">Snacks & Lunches</h3>
-    <div class="chart-card">
-      <table>
-      <tbody>
-        <tr>
-          <td></td>
-          <% @five_dates.each do |date| %>
-            <td><%= date %></td>
-          <% end %>
-        </tr>
-        <tr>
-          <td>Snack</td>
-          <% @five_snack_consumption.each do |a| %>
-            <% if a == "all" %>
-                <td>😃</td>
-              <% elsif a == "most" %>
-                <td>🙂</td>
-            <% else %>
-                <td>😕</td>
-            <% end %>
-          <% end %>
-        </tr>
-        <tr>
-          <td>Lunch</td>
-        <% @five_lunch_consumption.each do |a| %>
-            <% if a == "all" %>
-                <td>😃</td>
-              <% elsif a == "most" %>
-                <td>🙂</td>
-            <% else %>
-                <td>😕</td>
-            <% end %>
-          <% end %>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="grid-item">
-    <h3 class="card-headers">Bowel Movements</h3>
-    <div class="chart-card">
-      <canvas class="chart-canvas" data-activities-target="bowel"></canvas>
-    </div>
-  </div>
-  <div class="grid-item">
-    <h3 class="card-headers">Mood Consistency</h3>
-    <div class="chart-card">
-      <canvas class="chart-canvas" data-activities-target="mood"></canvas>
-    </div>
-  </div>
-</div>
-
-<div class="sidebar">
-  <div class="scrollable-div">
-    <% @activities.each do |activity| %>
-      <div class="activity-log">
-        <h3 class="activity-log-header"><%= activity.date.strftime("%A, %B %e, %Y") %></h3>
-        <h3 class="card-headers">Snack</h3>
-        <div class="info-card">
-          <p><%= activity.snack %></p>
-          <p><strong>Eaten: </strong><%= activity.snack_consumption %></p>
-        </div>
-
-        <h3 class="card-headers">Lunch</h3>
-        <div class="info-card">
-          <p><%= activity.lunch %></p>
-          <p><strong>Eaten: </strong><%= activity.lunch_consumption %></p>
-        </div>
-
-        <h3 class="card-headers">Bowel Movements</h3>
-        <div class="info-card">
-          <p><strong>Amount: </strong><%= activity.bowel_movement %></p>
-        </div>
-
-        <h3 class="card-headers">Nap Time</h3>
-        <div class="info-card">
-          <p><strong>Duration: </strong><%= activity.nap_duration %></p>
-        </div>
-
-        <h3 class="card-headers">Mood</h3>
-        <div class="info-card">
-          <p><strong>Overall: </strong><%= activity.overall_mood %></p>
+<div class="activities-container">
+  <div class="activities-grid-container"
+  data-controller="activities"
+  data-activities-naps-value="<%= @five_naps %>"
+  data-activities-foods-value="<%= @food_consumption %>"
+  data-activities-bowels-value="<%= @five_bowels %>"
+  data-activities-moods-value="<%= @moods %>"
+  data-activities-dates-value="<%= @five_dates %>">
+    <div class="grid-item">
+      <h3 class="card-headers">Nap Duration</h3>
+      <div class="chart-card">
+        <div class="chart-container">
+        <canvas class="chart-canvas" data-activities-target="nap"></canvas>
         </div>
       </div>
-    <% end %>
+    </div>
+
+
+    <div class="grid-item">
+      <h3 class="card-headers">Bowel Movements</h3>
+      <div class="chart-card">
+        <div class="chart-container">
+          <canvas class="chart-canvas" data-activities-target="bowel"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <h3 class="card-headers">Food Consumption</h3>
+      <div class="chart-card">
+        <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <% @five_dates.each do |date| %>
+              <td><%= date %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <td>Snack</td>
+            <% @five_snack_consumption.each do |a| %>
+              <% if a == "all" %>
+                  <td>😃</td>
+                <% elsif a == "most" %>
+                  <td>🙂</td>
+              <% else %>
+                  <td>😕</td>
+              <% end %>
+            <% end %>
+          </tr>
+          <tr>
+            <td>Lunch</td>
+          <% @five_lunch_consumption.each do |a| %>
+              <% if a == "all" %>
+                  <td>😃</td>
+                <% elsif a == "most" %>
+                  <td>🙂</td>
+              <% else %>
+                  <td>😕</td>
+              <% end %>
+            <% end %>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <h3 class="card-headers">Mood Consistency</h3>
+      <div class="chart-card">
+      <table>
+        <tbody>
+          <tr>
+            <% @five_dates.each do |date| %>
+              <td><%= date %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <% @five_moods.each do |a| %>
+              <td><%= a %></td>
+            <% end %>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sidebar">
+    <div class="scrollable-div">
+  <div class = "sidebar-photo" style="background-image: url('<%= image_path 'max.png'%>');"></div>
+
+      <% @activities.each do |activity| %>
+        <div class="activity-log">
+          <h3 class="activity-log-header"><%= activity.date.strftime("%A, %B %e, %Y") %></h3>
+          <h3 class="card-headers-sidebar" id="food"><strong>Snack</strong></h3>
+          <div class="info-card">
+            <p><%= activity.snack %> <br>
+            <strong>Eaten: </strong><%= activity.snack_consumption %></p>
+          </div>
+
+          <h3 class="card-headers-sidebar" id="food">Lunch</strong></h3>
+          <div class="info-card">
+            <p><%= activity.lunch %> <br>
+            <strong>Eaten: </strong><%= activity.lunch_consumption %></p>
+          </div>
+
+          <h3 class="card-headers-sidebar"><strong>Bowel movement(s)</strong><br>
+            <%= activity.bowel_movement %>
+          </h3>
+          <%# <div class="info-card">
+            <%# <p><strong>Amount: </strong><%= activity.bowel_movement %>
+          <%# </div> %>
+
+          <h3 class="card-headers-sidebar"><strong>Nap duration</strong><br>
+            <%= activity.nap_duration %> mins
+          </h3>
+          <%# <div class="info-card">
+            <p><strong>Duration: </strong><%= activity.nap_duration %></p>
+          <%# </div> %>
+
+          <h3 class="card-headers-sidebar"><strong>Mood</strong><br>
+            <%= activity.overall_mood %>
+          </h3>
+          <%# <div class="info-card">
+            <p><strong>Overall: </strong><%= activity.overall_mood %></p>
+          <%# </div> %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
