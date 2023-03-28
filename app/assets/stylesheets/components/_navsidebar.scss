@@ -1,57 +1,36 @@
-// css for nav-sidebar
+// NavBar
 .navbar{
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  margin: 30px;
   background-color: white;
-  width: 110px;
+  width: 90px;
   min-width: none;
   position: fixed;
-  // top: 0;
+  top: 0;
   left: 0;
-  filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.1));
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  justify-content: center;
-  row-gap: 25px;
+  border: 3px solid black;
+  border-radius: 20px;
 }
-// css code for the list of icons inside the nav-sidebar
-#menu {
-  row-gap: 25px;
+
+// Menu
+.menu-container {
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  columns: auto;
-  justify-content: center;
+  row-gap: 20px;
 }
 
-.nav-link.active{
-  background-color:#007B4E !important;
-  border-radius: 65px !important;
-
+// Logo
+.logo-container {
+  position: fixed;
+  top: 60px;
 }
 
-.on-page {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #007B4E;
-  box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// Signout
+.nav-button {
+  all: unset;
+  cursor: pointer;
 }
-
-
-
-
-/* Rectangle 37 */
-
-// position: absolute;
-// width: 59px;
-// height: 59px;
-// left: 31px;
-// top: 254px;
-
-// background: #007B4E;
-// border-radius: 60px;
