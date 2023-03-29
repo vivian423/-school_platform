@@ -240,7 +240,54 @@
   width: 50px;
 }
 
+@keyframes emojis_dashboard {
+  0% { transform: translate(-6px, -12px); }
+  33% { transform: translate(-8px, -12px); }
+  66% { transform: translate(-8px, -14px); }
+  100% { transform: translate(-6px, -14px); }
+}
+
+.dashboard_emojis_food:hover {
+  animation: emojis_dashboard .15s infinite alternate;
+}
+
+.dashboard_emojis_mood:hover {
+  animation: emojis_dashboard .15s infinite alternate;
+}
+
 .food_emoji_wrapper {
   display: flex;
-  justify-content: center;
+  font-weight: bolder;
+  // justify-content: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
+.bowel-number-wrapper {
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+#bowel_text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#bowel_number {
+  z-index: 10;
+  opacity: .6;
+  font-size: 100px;
+  font-weight: bolder;
+  color:#4e8ee8da;
+  top: -65px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 130px;
 }

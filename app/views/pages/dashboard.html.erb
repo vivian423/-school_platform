@@ -11,19 +11,19 @@
           <div class="food_emoji_wrapper">
             <% a = @kids.first.activities.last.snack_consumption %>
                 <% if a == "all" %>
-                    <p class="dashboard_emojis_food">Snack <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/clap.svg" %></p>
                   <% elsif a == "most" %>
-                    <p class="dashboard_emojis_food">Snack <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
                 <% else %>
-                    <p class="dashboard_emojis_food">Snack <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
                 <% end %>
             <% a = @kids.first.activities.last.lunch_consumption %>
                 <% if a == "all" %>
-                    <p class="dashboard_emojis_food">Lunch <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/clap.svg" %></p>
                   <% elsif a == "most" %>
-                    <p class="dashboard_emojis_food">Lunch <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
                 <% else %>
-                    <p class="dashboard_emojis_food">Lunch <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
                 <% end %>
           </div>
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="acts-info">
           <h5>Nap Time</h5>
-          <p><%= @kids.first.activities.last.nap_duration %> min</p>
+          <p><%= pluralize(@kids.first.activities.last.nap_duration, "min")%></p>
         </div>
       </div>
 
@@ -44,8 +44,8 @@
           <%= image_tag("toilet.png", class: "info-imgs") %>
         </div>
         <div class="acts-info">
-          <h5>Bowel Movements</h5>
-          <p><%= @kids.first.activities.last.bowel_movement %> times</p>
+          <div class="bowel-number-wrapper">
+            <p><%= pluralize(@kids.first.activities.last.bowel_movement, "time") %></p>
         </div>
       </div>
 

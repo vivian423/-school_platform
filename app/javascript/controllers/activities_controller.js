@@ -59,8 +59,11 @@ export default class extends Controller {
         maintainAspectRatio: false,
         plugins: {
           legend: {
-             display: false,
-          }
+            display: false
+          },
+          tooltips: {
+            enabled: false
+          },
         },
       },
       })
