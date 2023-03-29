@@ -1,25 +1,44 @@
 <div class="dashboard-grid-container">
   <div class="activity-grid-item">
     <h3 class="card-headers">Daily Activities</h3>
-    <div class="activity-card">
+    <div class="activity-container">
       <div class="acts-card">
-        <div class="acts-content">
-
+        <div class="acts-img">
+          <%= image_tag("healthy-food.png", class: "info-imgs") %>
+        </div>
+        <div class="acts-info">
+          <h5>Food Consumption</h5>
+          <p><%= @kids.first.activities.last.snack_consumption.capitalize %> snacks, <%= @kids.first.activities.last.lunch_consumption %> lunch</p>
         </div>
       </div>
 
       <div class="acts-card">
-        <div class="acts-content">
+        <div class="acts-img">
+          <%= image_tag("sleep.png", class: "info-imgs") %>
+        </div>
+        <div class="acts-info">
+          <h5>Nap Time</h5>
+          <p><%= @kids.first.activities.last.nap_duration %> min</p>
         </div>
       </div>
 
       <div class="acts-card">
-        <div class="acts-content">
+        <div class="acts-img">
+          <%= image_tag("toilet.png", class: "info-imgs") %>
+        </div>
+        <div class="acts-info">
+          <h5>Bowel Movements</h5>
+          <p><%= @kids.first.activities.last.bowel_movement %> times</p>
         </div>
       </div>
 
       <div class="acts-card">
-        <div class="acts-content">
+        <div class="acts-img">
+          <%= image_tag("mood.png", class: "info-imgs") %>
+        </div>
+        <div class="acts-info">
+          <h5>Overall Mood</h5>
+          <p><%= @kids.first.activities.last.overall_mood %></p>
         </div>
       </div>
     </div>
@@ -28,10 +47,10 @@
   <div class="photos-grid-item">
     <h3 class="card-headers">Photos</h3>
     <div class="photos-card">
-      <%# cl_image_tag photo.photo.key, class: "dashboard-img-grid" %>
-      <%# cl_image_tag photo.photo.key, class: "dashboard-img-grid" %>
-      <%# cl_image_tag photo.photo.key, class: "dashboard-img-grid" %>
-      <%# cl_image_tag photo.photo.key, class: "dashboard-img-grid" %>
+      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[0].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[1].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[2].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[3].photo.key %>')"></div>
     </div>
   </div>
 
@@ -43,4 +62,68 @@
 </div>
 
 <div class="dash-sidebar">
+  <div class="dash-sidebar-header">
+    <div class="dash-child-info">
+      <h3><%= @kids.first.first_name %> <%= @kids.first.last_name %></h3>
+      <p>Nido | <%= @kids.first.rooms.first.user.first_name %></strong></p>
+    </div>
+    <div class="avatar-container">
+      <div class="dash-child-avatar" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @kids.first.photo.key %>')">
+      </div>
+    </div>
+  </div>
+
+  <div class="calendar-cards">
+    <div class="<%= Date.today.strftime('%a').upcase == 'MON' ? 'date-card-today' : 'date-card' %>">
+      <div class="date">
+        <p><strong>MON</strong></p>
+        <p>12</p>
+      </div>
+    </div>
+
+    <div class="<%= Date.today.strftime('%a').upcase == 'TUE' ? 'date-card-today' : 'date-card' %>">
+      <div class="date">
+        <p><strong>TUE</strong></p>
+        <p>13</p>
+      </div>
+    </div>
+
+    <div class="<%= Date.today.strftime('%a').upcase == 'WED' ? 'date-card-today' : 'date-card' %>">
+      <div class="date">
+        <p><strong>WED</strong></p>
+        <p>14</p>
+      </div>
+    </div>
+
+    <div class="<%= Date.today.strftime('%a').upcase == 'THU' ? 'date-card-today' : 'date-card' %>">
+      <div class="date">
+        <p><strong>THU</strong></p>
+        <p>15</p>
+      </div>
+    </div>
+
+    <div class="<%= Date.today.strftime('%a').upcase == 'FRI' ? 'date-card-today' : 'date-card' %>">
+      <div class="date">
+        <p><strong>FRI</strong></p>
+        <p>16</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="upcoming-meetings">
+    <h3 class="card-headers">Upcoming Events</h3>
+    <% @announcements.each do |announcement| %>
+      <% id_incr = 'a' %>
+      <div class="announcement-card">
+        <input type="checkbox" name="event-accordion" id="<%= id_incr + 'a' %>" class="accordion-input">
+        <label for="<%= id_incr + 'a' %>" class="announcement-title">
+          <p class="event-title"><%= @announcements.first.title %></p>
+          <p class="event-date"><%= @announcements.first.date.strftime('%a %d').capitalize %></p>
+        </label>
+        <div class="announcement-card-details">
+          <p class="event-details"><%= @announcements.first.content.capitalize %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
