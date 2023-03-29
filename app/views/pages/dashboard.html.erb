@@ -81,6 +81,19 @@
   <div class="messages-grid-item">
     <h3 class="card-headers">Messages</h3>
     <div class="messages-card">
+      <% @chatrooom.messages.each do |message| %>
+      <div class="dash-message">
+        <div class="message-meta">
+          <% if message.user_id == current_user.id %>
+            <p><%= "You" %></p>
+          <% else %>
+            <p><%= User.find(message.user_id).first_name %></p>
+          <% end %>
+          <p><%= message.created_at.strftime('%a %d').upcase %></p>
+        </div>
+        <p><%= message.content %></p>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -101,52 +114,45 @@
     <div class="<%= Date.today.strftime('%a').upcase == 'MON' ? 'date-card-today' : 'date-card' %>">
       <div class="date">
         <p><strong>MON</strong></p>
-        <p>12</p>
+        <p><%= Date.today.beginning_of_week.strftime('%d') %></p>
       </div>
     </div>
 
     <div class="<%= Date.today.strftime('%a').upcase == 'TUE' ? 'date-card-today' : 'date-card' %>">
       <div class="date">
         <p><strong>TUE</strong></p>
-        <p>13</p>
+        <p><%= Date.today.beginning_of_week.next_day.strftime('%d') %></p>
       </div>
     </div>
 
     <div class="<%= Date.today.strftime('%a').upcase == 'WED' ? 'date-card-today' : 'date-card' %>">
       <div class="date">
         <p><strong>WED</strong></p>
-        <p>14</p>
+        <p><%= Date.today.beginning_of_week.next_day.next_day.strftime('%d') %></p>
       </div>
     </div>
 
     <div class="<%= Date.today.strftime('%a').upcase == 'THU' ? 'date-card-today' : 'date-card' %>">
       <div class="date">
         <p><strong>THU</strong></p>
-        <p>15</p>
+        <p><%= Date.today.beginning_of_week.next_day.next_day.next_day.strftime('%d') %></p>
       </div>
     </div>
 
     <div class="<%= Date.today.strftime('%a').upcase == 'FRI' ? 'date-card-today' : 'date-card' %>">
       <div class="date">
         <p><strong>FRI</strong></p>
-        <p>16</p>
+        <p><%= Date.today.beginning_of_week.next_day.next_day.next_day.strftime('%d') %></p>
       </div>
     </div>
   </div>
 
+  <h3 class="card-headers mt-3">Upcoming Events</h3>
   <div class="upcoming-meetings">
-    <h3 class="card-headers">Upcoming Events</h3>
-    <% @announcements.each do |announcement| %>
-      <% id_incr = 'a' %>
-      <div class="announcement-card">
-        <input type="checkbox" name="event-accordion" id="<%= id_incr + 'a' %>" class="accordion-input">
-        <label for="<%= id_incr + 'a' %>" class="announcement-title">
-          <p class="event-title"><%= @announcements.first.title %></p>
-          <p class="event-date"><%= @announcements.first.date.strftime('%a %d').capitalize %></p>
-        </label>
-        <div class="announcement-card-details">
-          <p class="event-details"><%= @announcements.first.content.capitalize %></p>
-        </div>
+    <% @meetings.each do |meeting| %>
+      <div class="meeting-card">
+          <p class="event-title"><%= meeting.name %></p>
+          <p class="event-date"><%= meeting.start_time.strftime('%b %d').upcase %></p>
       </div>
     <% end %>
   </div>

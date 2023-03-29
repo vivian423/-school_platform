@@ -16,6 +16,8 @@ Tag.destroy_all
 Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
+Meeting.destroy_all
+Message.destroy_all
 
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
@@ -111,7 +113,7 @@ parent_relationship_e.kid_id = brad.id
 parent_relationship_e.save!
 
 # FIRST KID PHOTO
-file = URI.open('https://images.unsplash.com/flagged/photo-1551600466-464bbbbd15f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')
+file = URI.open('app/assets/images/max.png')
 max.photo.attach(io: file, filename: "avatar.png", content_type: "image/png")
 max.save
 
@@ -303,26 +305,6 @@ chatroom_brad = Chatroom.new(name: "Brad's chatroom")
 chatroom_brad.kid = brad
 chatroom_brad.save!
 
-message_one = Message.new(content: "Good morning, max needs nappies and wipes please!")
-message_one.chatroom = chatroom_max
-message_one.user = teacher
-message_one.save!
-
-message_two = Message.new(content: "Hi Ms Mary, okay will pack them tomorrow :)")
-message_two.chatroom = chatroom_max
-message_two.user = parent
-message_two.save!
-
-message_three = Message.new(content: "He was twisting and turning throughout the night. How is he today?")
-message_three.chatroom = chatroom_max
-message_three.user = parent
-message_three.save!
-
-message_four = Message.new(content: "Thanks for letting us know. He is a little lower energy today, but still his happy self. Looks like there's a bug going around the class. We'll keep a closer eye on him today.")
-message_four.chatroom = chatroom_max
-message_four.user = teacher
-message_four.save!
-
 firsta_seed = Announcement.new(
   title: 'Parents-teacher personal meeting',
   content: 'We are happy to announce that first Parents-teacher meeting of the year is in next month. Send us message if the date and time suits to you or not',
@@ -428,5 +410,20 @@ photos_array.each do |photo_url|
   counter += 1
 end
 
+# Seeding Messages for MAX's Chatroom
+message_one = Message.new(content: "Hi Ms Mary!")
+message_one.chatroom = chatroom_max
+message_one.user = parent
+message_one.save!
+
+message_two = Message.new(content: "Max has been loving our new dinosaur theme! We built a volcano and he was so excited!")
+message_two.chatroom = chatroom_max
+message_two.user = teacher
+message_two.save!
+
+message_three = Message.new(content: "He was twisting and turning throughout the night. How is he today?")
+message_three.chatroom = chatroom_max
+message_three.user = parent
+message_three.save!
 
 puts "... seeds created ..."

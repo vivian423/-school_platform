@@ -45,11 +45,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 30px;
+  row-gap: 20px;
 }
 
 .acts-info {
   text-align: center;
+}
+
+.acts-img {
+  margin-top: 20px;
 }
 
 .info-imgs {
@@ -84,6 +88,7 @@
   border-radius: 14px;
   background-size: cover;
   background-position: center;
+  border: 2px solid black;
 }
 
 
@@ -97,12 +102,39 @@
 
 .messages-card {
   height: 100%;
+  max-height: 320px;
   background-color: white;
   border-radius: 20px;
   border: 3px solid black;
   box-sizing: border-box;
+  padding: 15px;
+  overflow-y: auto;
 }
 
+.dash-message {
+  width: 100%;
+  background-color: #FBE7B8;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.message-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+// Hover for cards
+.acts-card:hover, .photos-card:hover, .messages-card:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.acts-card:active, .photos-card:active, .messages-card:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
 
 // Sidebar
 .dash-sidebar {
@@ -167,12 +199,20 @@
 
 .date-card-today {
   height: 100%;
-  background-color: orange;
+  background-color: #6A9DDF;
   border-radius: 8px;
-  color: white;
+  color: black;
+  outline: 3px solid black;
+  margin-inline: 1px;
+  box-shadow: 0.1em 0.1em;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.date-card-today:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
 }
 
 .date {
@@ -183,28 +223,30 @@
 
 
 .upcoming-meetings {
-  margin-top: 20px;
-  max-height: 90%;
+  margin-right: -25px;
+  padding-right: 10px;
+  max-height: 410px;
   overflow-y: auto;
+  // margin-bottom: 10px;
+  // border-bottom-right-radius: 20px;
 }
 
-.announcement-card {
+.meeting-card {
   width: 100%;
   border-radius: 12px;
   background-color: #FBE7B8;
-  margin: 20px 0px;
+  margin-bottom: 15px;
   padding: 15px;
-}
 
-.announcement-title {
   display: flex;
   justify-content: space-between;
+  // align-items: center;
   column-gap: 10px;
   cursor: pointer;
 }
 
 .announcement-card:hover {
-  background: #f56411;
+  background: #6A9DDF;
 }
 
 .event-title {
@@ -214,19 +256,6 @@
 
 .event-date {
   flex: 1;
-}
-
-.accordion-input {
-  display: none;
-}
-
-.announcement-card-details {
-  margin-top: 10px;
-  display: none;
-}
-
-.accordion-input:checked ~ .announcement-card-details {
-  display: block;
 }
 
 .dashboard_emojis_mood {
