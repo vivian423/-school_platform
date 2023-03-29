@@ -57,82 +57,43 @@ export default class extends Controller {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        layout: {
-          padding: 20
-          }
-        }
+        },
         plugins: {
           legend: {
              display: false,
-             pointLabels: {
-              fontSize: 18,
-              fontFamily: "'Mulish', 'sans-serif'",
-              fontColor: 'black',
-              fontWeight: 900,
+          }
+        }
+      })
+
+      new Chart(this.bowelTarget, {
+        type: 'bar',
+        data: {
+          labels: this.datesValue,
+          datasets: [{
+            label: 'bowel',
+            data: this.bowelsValue,
+            borderWidth: 3,
+            borderColor: 'black',
+            backgroundColor: '#FBCA1F',
+            color: 'black',
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+               display: false,
+            }
+          },
+          scales: {
+            y: {
+                ticks: {
+                    stepSize: 1
+                }
             }
           }
-        }
-      }
-    //   options: {
-    //     legend: {
-    //        display: false
-    //     }
-    //  }
+       }
     });
-
-    new Chart(this.bowelTarget, {
-      type: 'bar',
-      data: {
-        labels: this.datesValue,
-        datasets: [{
-          label: 'bowel',
-          data: this.bowelsValue,
-          borderWidth: 3,
-          borderColor: 'black',
-          backgroundColor: '#FBCA1F',
-          color: 'black',
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-             display: false,
-             labels: {
-              font: {
-                size: 18,
-                family: "'Mulish', 'sans-serif'",
-                color: 'black',
-                weight: 900,
-              }
-             }
-          }
-        },
-        scales: {
-          y: {
-              ticks: {
-                  stepSize: 1
-              }
-          }
-        }
-     }
-  //     options: {
-  //       scales: {
-  //         y: {
-  //           beginAtZero: true
-  //         },
-  //         ticks: {
-  //             userCallback(label, index, labels) {
-  //                // only show if whole number
-  //                if (Math.floor(label) === label) {
-  //                    return label;
-  //                }
-  //                 }
-  //               }
-  //               }
-
-  // }
-});
-}
+  }
 }
