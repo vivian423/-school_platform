@@ -235,14 +235,14 @@ eighth_activity.user = teacher
 eighth_activity.save!
 
 ninth_activity = Activity.new(
-  bowel_movement: 1,
+  bowel_movement: 2,
   nap_duration: 115,
   snack: 'Banana and yoghurt',
   lunch: 'Chicken and beans fried rice',
   date: Time.strptime('03/30/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',
   lunch_consumption: 'most',
-  overall_mood: 'Happy overall'
+  overall_mood: 'Happy and active overall'
 )
 ninth_activity.kid_id = max.id
 ninth_activity.user = teacher
@@ -251,7 +251,7 @@ ninth_activity.save!
 tenth_activity = Activity.new(
   bowel_movement: 1,
   nap_duration: 115,
-  snack: 'Sweet rice pudding',
+  snack: 'Ham and cheese croissant',
   lunch: 'Salmon and spaghetti',
   date: Time.strptime('03/31/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',

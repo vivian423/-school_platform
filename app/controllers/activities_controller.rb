@@ -8,6 +8,7 @@ class ActivitiesController < ApplicationController
     @bowels = @activities.map(&:bowel_movement)
     @five_bowels = @bowels.first(5)
     @moods = @activities.map(&:overall_mood)
+    @five_moods = @moods.first(5)
     @dates = @activities.map(&:date)
     @snack_consumption = @activities.map(&:snack_consumption)
     @lunch_consumption = @activities.map(&:lunch_consumption)
