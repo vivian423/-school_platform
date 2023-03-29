@@ -1,7 +1,7 @@
 .images-container{
   margin-left: 110px;
-  margin-right: 400px;
-  padding: 30px 40px 40px 40px;
+  margin-right: 430px;
+  padding: 30px;
   box-sizing: border-box;
 }
 
@@ -67,4 +67,20 @@ img {
 
 .carousel-control-next {
   right: -60px;
+}
+
+.photos-sidebar {
+  background-color: white;
+  align-self: flex-end;
+  width: 400px;
+  height: calc(100vh - 60px);
+  margin: 30px;
+  position: fixed;
+  overflow-x: auto;
+  border-radius: 25px;
+  border: 3px solid black;
+  font-family: 'Mulish', sans-serif;
+
+  top: 0;
+  right: 0;
 }
