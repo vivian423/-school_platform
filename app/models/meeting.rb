@@ -3,4 +3,6 @@ class Meeting < ApplicationRecord
 
   validates :start_time, :end_time, presence: true
   validates :end_time, comparison: { greater_than: :start_time }
+
+  has_noticed_notifications
 end
