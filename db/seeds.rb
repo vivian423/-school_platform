@@ -16,7 +16,6 @@ Tag.destroy_all
 Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
-Event.destroy_all
 Meeting.destroy_all
 Announcement.destroy_all
 
@@ -114,7 +113,7 @@ parent_relationship_e.kid_id = brad.id
 parent_relationship_e.save!
 
 # FIRST KID PHOTO
-file = URI.open('https://images.unsplash.com/flagged/photo-1551600466-464bbbbd15f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')
+file = URI.open('app/assets/images/max.png')
 max.photo.attach(io: file, filename: "avatar.png", content_type: "image/png")
 max.save
 
