@@ -164,12 +164,25 @@
   // box-sizing: border-box;
 
   table {
-    padding: 10px;
-    font-size: 16px;
+    // padding: 10px;
+    font-size: 13px;
   }
 
   td, th {
     text-align: center;
+    padding: 10px;
+  }
+}
+
+.emoji_td {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+
+  svg {
+    display: block;
+    height: 40px;
+    width: 40px;
   }
 }
 
