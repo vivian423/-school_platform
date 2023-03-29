@@ -8,10 +8,10 @@ body{
 
   height: calc(100vh - 60px);
   margin-top: 30px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.8);
   // margin-bottom: 0;
   margin-left: 100px;
-  margin-right: 100px;
+  margin-right: 140px;
   padding: 12px;
   background: white;
   display: flex;
@@ -32,12 +32,14 @@ body{
     padding: 10px;
     opacity: 0.8;
     font-size: 22px;
-    border-bottom: 1.3px solid #FBE7B5;
+    border-bottom: 1.5px solid #4e8ee8da;
 
   }
   .btn {
-    background-color:#EF551D;
+    background-color: white;
+    border: none;
     color: white;
+    margin-bottom: 1rem;
     // opacity: .8;
   }
 
@@ -57,7 +59,7 @@ body{
   #new_message {
     // border-top: 1px solid $gray-200;
     padding: 1rem;
-
+    width: auto;
     .form-group {
       margin-bottom: 0;
     }
@@ -136,9 +138,13 @@ body{
 // }
 .logo-profile{
   float: left;
-  max-width: 60px;
-  width: 100%;
   margin-right: 20px;
   border-radius: 50%;
   border: 2px solid black;
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  border-radius: 50%;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
