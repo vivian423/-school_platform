@@ -57,7 +57,19 @@
   <div class="messages-grid-item">
     <h3 class="card-headers">Messages</h3>
     <div class="messages-card">
-    <%= Date.today.beginning_of_week.strftime('%d') %>
+      <% @chatrooom.messages.each do |message| %>
+      <div class="dash-message">
+        <div class="message-meta">
+          <% if message.user_id == current_user.id %>
+            <p><%= "You" %></p>
+          <% else %>
+            <p><%= User.find(message.user_id).first_name %></p>
+          <% end %>
+          <p><%= message.created_at.strftime('%a %d').upcase %></p>
+        </div>
+        <p><%= message.content %></p>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -111,20 +123,12 @@
     </div>
   </div>
 
-  <h3 class="card-headers mt-3">Announcements</h3>
-  <%# ADD MEETINGS %>
+  <h3 class="card-headers mt-3">Upcoming Events</h3>
   <div class="upcoming-meetings">
-    <% @announcements.each do |announcement| %>
-      <% id_incr = 'a' %>
-      <div class="announcement-card">
-        <input type="checkbox" name="event-accordion" id="<%= id_incr + 'a' %>" class="accordion-input">
-        <label for="<%= id_incr + 'a' %>" class="announcement-title">
-          <p class="event-title"><%= announcement.title %></p>
-          <p class="event-date"><%= announcement.date.strftime('%a %d').capitalize %></p>
-        </label>
-        <div class="announcement-card-details">
-          <p class="event-details"><%= announcement.content.capitalize %></p>
-        </div>
+    <% @meetings.each do |meeting| %>
+      <div class="meeting-card">
+          <p class="event-title"><%= meeting.name %></p>
+          <p class="event-date"><%= meeting.start_time.strftime('%b %d').upcase %></p>
       </div>
     <% end %>
   </div>

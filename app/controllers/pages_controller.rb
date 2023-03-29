@@ -8,6 +8,6 @@ class PagesController < ApplicationController
     @kids = current_user.children
     @photos = Photo.all
     @meetings = Meeting.all
-    @announcements = Announcement.all
+    @chatrooom = Chatroom.find(@kids.first.chatroom_ids.join.to_i)
   end
 end
