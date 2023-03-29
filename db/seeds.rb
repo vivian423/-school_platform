@@ -16,6 +16,8 @@ Tag.destroy_all
 Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
+Meeting.destroy_all
+Message.destroy_all
 
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)

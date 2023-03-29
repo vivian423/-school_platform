@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :children, dependent: :destroy
   # is it possible to do through x2?
 
+  has_many :notifications, as: :recipient, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

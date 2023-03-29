@@ -5,9 +5,19 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @kids = current_user.children
     @photos = Photo.all
     @meetings = Meeting.all
-    @chatrooom = Chatroom.find(@kids.first.chatroom_ids.join.to_i)
+    if current_user.teacher == false
+      @kids = current_user.children
+      # Hard coded to Max's chatroom
+      @chatrooom = Chatroom.find(@kids.first.chatroom_ids.join.to_i)
+    else
+      @kids = current_user.kids
+      # Hard coded to Max's chatroom
+      @chatrooom = Chatroom.find(@kids.first.chatroom_ids.join.to_i)
+    end
+
+    @notifications = current_user.notifications.count
+    current_user.notifications.mark_as_read!
   end
 end
