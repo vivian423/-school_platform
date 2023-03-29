@@ -44,8 +44,8 @@
           <%= image_tag("toilet.png", class: "info-imgs") %>
         </div>
         <div class="acts-info">
-          <div class="bowel-number-wrapper">
-            <p><%= pluralize(@kids.first.activities.last.bowel_movement, "time") %></p>
+          <h5>Bowel Movements</h5>
+          <p><%= pluralize(@kids.first.activities.last.bowel_movement, "time") %></p>
         </div>
       </div>
 
@@ -54,8 +54,8 @@
           <%= image_tag("mood.png", class: "info-imgs") %>
         </div>
         <div class="acts-info">
-          <h5>Overall Mood</h5>
-            <% a = @kids.first.activities.last.overall_mood %>
+          <h5>Mood</h5>
+           <% a = @kids.first.activities.last.overall_mood %>
               <% if a == "Super happy mostly" %>
                 <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/star-face.svg" %></p>
                 <% elsif a == "Under the weather" %>

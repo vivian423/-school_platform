@@ -46,6 +46,10 @@
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+
+  h5 {
+    font-weight: bolder;
+  }
 }
 
 .acts-info {
@@ -57,7 +61,7 @@
 }
 
 .info-imgs {
-  width: 120px;
+  width: 100px;
 }
 
 
@@ -234,7 +238,9 @@
 .meeting-card {
   width: 100%;
   border-radius: 12px;
-  background-color: #FBE7B8;
+  background: rgb(255,255,255);
+  background: linear-gradient(5deg, rgba(255,255,255,1) 9%, rgba(254,249,247,1) 22%, rgba(253,242,239,1) 35%, rgba(252,234,229,1) 51%, rgba(254,249,247,1) 67%, rgba(249,209,195,1) 82%, rgba(246,191,172,1) 95%, rgba(244,178,155,1) 100%);
+
   margin-bottom: 15px;
   padding: 15px;
 
@@ -265,8 +271,8 @@
 }
 
 .dashboard_emojis_food {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
 @keyframes emojis_dashboard {
