@@ -8,7 +8,24 @@
         </div>
         <div class="acts-info">
           <h5>Food Consumption</h5>
-          <p><%= @kids.first.activities.last.snack_consumption.capitalize %> snacks, <%= @kids.first.activities.last.lunch_consumption %> lunch</p>
+          <div class="food_emoji_wrapper">
+            <% a = @kids.first.activities.last.snack_consumption %>
+                <% if a == "all" %>
+                    <p class="dashboard_emojis_food">Snack <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                  <% elsif a == "most" %>
+                    <p class="dashboard_emojis_food">Snack <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                <% else %>
+                    <p class="dashboard_emojis_food">Snack <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                <% end %>
+            <% a = @kids.first.activities.last.lunch_consumption %>
+                <% if a == "all" %>
+                    <p class="dashboard_emojis_food">Lunch <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                  <% elsif a == "most" %>
+                    <p class="dashboard_emojis_food">Lunch <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                <% else %>
+                    <p class="dashboard_emojis_food">Lunch <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                <% end %>
+          </div>
         </div>
       </div>
 
@@ -38,7 +55,14 @@
         </div>
         <div class="acts-info">
           <h5>Overall Mood</h5>
-          <p><%= @kids.first.activities.last.overall_mood %></p>
+            <% a = @kids.first.activities.last.overall_mood %>
+              <% if a == "Super happy mostly" %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/star-face.svg" %></p>
+                <% elsif a == "Under the weather" %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/weather-face.svg" %></p>
+                <% else %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/little-smile-face.svg" %></p>
+            <% end %>
         </div>
       </div>
     </div>

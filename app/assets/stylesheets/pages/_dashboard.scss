@@ -228,3 +228,19 @@
 .accordion-input:checked ~ .announcement-card-details {
   display: block;
 }
+
+.dashboard_emojis_mood {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+}
+
+.dashboard_emojis_food {
+  height: 50px;
+  width: 50px;
+}
+
+.food_emoji_wrapper {
+  display: flex;
+  justify-content: center;
+}

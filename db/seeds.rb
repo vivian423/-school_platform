@@ -303,20 +303,25 @@ chatroom_brad = Chatroom.new(name: "Brad's chatroom")
 chatroom_brad.kid = brad
 chatroom_brad.save!
 
-message_one = Message.new(content: "Hi Ms Mary!")
+message_one = Message.new(content: "Good morning, max needs nappies and wipes please!")
 message_one.chatroom = chatroom_max
-message_one.user = parent
+message_one.user = teacher
 message_one.save!
 
-message_two = Message.new(content: "Max has been loving our new dinosaur theme! We built a volcano and he was so excited!")
+message_two = Message.new(content: "Hi Ms Mary, okay will pack them tomorrow :)")
 message_two.chatroom = chatroom_max
-message_two.user = teacher
+message_two.user = parent
 message_two.save!
 
 message_three = Message.new(content: "He was twisting and turning throughout the night. How is he today?")
 message_three.chatroom = chatroom_max
 message_three.user = parent
 message_three.save!
+
+message_four = Message.new(content: "Thanks for letting us know. He is a little lower energy today, but still his happy self. Looks like there's a bug going around the class. We'll keep a closer eye on him today.")
+message_four.chatroom = chatroom_max
+message_four.user = teacher
+message_four.save!
 
 firsta_seed = Announcement.new(
   title: 'Parents-teacher personal meeting',
