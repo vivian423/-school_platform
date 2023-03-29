@@ -40,23 +40,23 @@
             <td>Snack</td>
             <% @five_snack_consumption.each do |a| %>
               <% if a == "all" %>
-                  <td>😃</td>
+                  <td class="emoji_td"><%= inline_svg_tag "food_emojis/clap.svg" %></td>
                 <% elsif a == "most" %>
-                  <td>🙂</td>
+                  <td class="emoji_td"><%= inline_svg_tag "food_emojis/thumbs-up.svg" %></td>
               <% else %>
-                  <td>😕</td>
+                  <td class="emoji_td"><%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></td>
               <% end %>
             <% end %>
           </tr>
           <tr>
             <td>Lunch</td>
           <% @five_lunch_consumption.each do |a| %>
-              <% if a == "all" %>
-                  <td>😃</td>
+                  <% if a == "all" %>
+                  <td class="emoji_td"><%= inline_svg_tag "food_emojis/clap.svg" %></td>
                 <% elsif a == "most" %>
-                  <td>🙂</td>
+                  <td class="emoji_td"><%= inline_svg_tag "food_emojis/thumbs-up.svg" %></td>
               <% else %>
-                  <td>😕</td>
+                  <td class="emoji_td"><%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></td>
               <% end %>
             <% end %>
           </tr>
@@ -78,7 +78,13 @@
           </tr>
           <tr>
             <% @five_moods.each do |a| %>
-              <td><%= a %></td>
+              <% if a == "Super happy mostly" %>
+                  <td class="emoji_td"><%= inline_svg_tag "mood_emojis/star-face.svg" %></td>
+              <% elsif a == "Under the weather" %>
+                  <td class="emoji_td"><%= inline_svg_tag "mood_emojis/weather-face.svg" %></td>
+              <% else %>
+                  <td class="emoji_td"><%= inline_svg_tag "mood_emojis/little-smile-face.svg" %></td>
+              <% end %>
             <% end %>
           </tr>
           </tbody>
