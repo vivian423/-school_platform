@@ -6,27 +6,32 @@ body{
 }
 .chatroom {
 
+  height: calc(100vh - 60px);
+  margin-top: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.8);
   // margin-bottom: 0;
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 20px;
-  height: 100%;
   padding: 12px;
   background: white;
   display: flex;
   flex-direction: column;
   // justify-content: space-between;
-  flex-grow: 1;
+  // flex-grow: 1;
   border: 2px solid black;
   border-radius: 20px;
 
   h1 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: flex-start;
+    justify-content: flex-end;
+    align-items: center;
     // border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 10px;
-    opacity: .8;
-    font-size: 19px;
+    opacity: 0.8;
+    font-size: 22px;
     border-bottom: 1.3px solid #FBE7B5;
 
   }
@@ -62,14 +67,14 @@ body{
 .content-wrapper {
   overflow: hidden;
   display: grid;
-  grid-template-columns: 5fr 2fr;
+  grid-template-columns: 6fr;
 
   margin-left: 80px;
 
   width: 100%;
-  height: calc(100vh - 60px);
 
-  padding: 40px 40px 40px 40px;
+
+
   box-sizing: border-box;
   // display: flex;
   // justify-content: space-between;
@@ -135,4 +140,5 @@ body{
   width: 100%;
   margin-right: 20px;
   border-radius: 50%;
+  border: 2px solid black;
 }
