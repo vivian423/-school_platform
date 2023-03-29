@@ -113,20 +113,11 @@ parent_relationship_e.user_id = parent_three.id
 parent_relationship_e.kid_id = brad.id
 parent_relationship_e.save!
 
-# kid_three = Kid.create(
-#   first_name: 'Lucas',
-#   last_name: 'Petterson'
-# )
+# FIRST KID PHOTO
+file = URI.open('https://images.unsplash.com/flagged/photo-1551600466-464bbbbd15f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')
+max.photo.attach(io: file, filename: "avatar.png", content_type: "image/png")
+max.save
 
-# kid_four = Kid.create(
-#   first_name: 'William',
-#   last_name: 'Kola'
-# )
-
-# kid_five = Kid.create(
-#   first_name: 'Mona',
-#   last_name: 'Laci'
-# )
 
 # ACTIVITIES
 first_seed = Activity.new(
