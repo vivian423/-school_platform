@@ -6,7 +6,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @kids = current_user.children
-    # @photos = Photo.all
-    @events = Event.all
+    @photos = Photo.all
+    @meetings = Meeting.all
+    @announcements = Announcement.all
   end
 end
