@@ -8,12 +8,8 @@
 .sender-style, .receiver-style {
   width: 100%;
   max-width: 50%;
-
-
   min-height: 100px;
-
   height: 100%;
-
   border-radius: 0px;
   padding: 20px 20px 5px 20px;
   margin-bottom: 20px;
@@ -21,8 +17,7 @@
   font-weight: bold;
   color: black;
   margin-top: 1px;
-  font-size: 14px;
-
+  font-size: 12px;
   border-radius: 40px 0 40px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
@@ -33,7 +28,7 @@
 }
 
 .receiver-style {
-  background-color: #4e8ee8da;
+  background-color: #4087ebda;
 }
 .message-avatar{
   border-radius: 50%;
@@ -45,6 +40,7 @@
   position: relative;
   height: 100%;
 
+
   i {
     position: absolute;
     bottom: -2px;
@@ -52,9 +48,10 @@
     font-size: 12px;
   }
   .av-message{
+
     font-size: 1.15em !important;
   } p{
     font-weight: 200;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
