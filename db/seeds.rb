@@ -14,10 +14,11 @@ Room.destroy_all
 Photo.destroy_all
 Tag.destroy_all
 Chatroom.destroy_all
+Meeting.destroy_all
 Kid.destroy_all
 User.destroy_all
 Event.destroy_all
-Meeting.destroy_all
+
 Announcement.destroy_all
 
 # USER
