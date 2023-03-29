@@ -17,9 +17,6 @@ Chatroom.destroy_all
 Kid.destroy_all
 User.destroy_all
 
-Meeting.destroy_all
-Announcement.destroy_all
-
 # USER
 parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
 
@@ -196,9 +193,9 @@ sixth_activity = Activity.new(
   snack: 'Oatmeal cookie and whole milk',
   lunch: 'Baked hake with rice',
   date: Time.strptime('03/27/2023 17:00', '%m/%d/%Y %H:%M'),
-  snack_consumption: 'all',
+  snack_consumption: 'most',
   lunch_consumption: 'little',
-  overall_mood: 'Happy overall'
+  overall_mood: 'Under the weather'
 )
 
 sixth_activity.kid = max
@@ -213,7 +210,7 @@ seventh_activity = Activity.new(
   date: Time.strptime('03/28/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'most',
   lunch_consumption: 'most',
-  overall_mood: 'Happy overall'
+  overall_mood: 'Happy mostly'
 )
 
 seventh_activity.kid_id = max.id
@@ -228,7 +225,7 @@ eighth_activity = Activity.new(
   date: Time.strptime('03/29/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',
   lunch_consumption: 'all',
-  overall_mood: 'Happy overall'
+  overall_mood: 'Super happy mostly'
 )
 eighth_activity.kid_id = max.id
 eighth_activity.user = teacher
@@ -242,7 +239,7 @@ ninth_activity = Activity.new(
   date: Time.strptime('03/30/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',
   lunch_consumption: 'most',
-  overall_mood: 'Happy and active overall'
+  overall_mood: 'Super happy mostly'
 )
 ninth_activity.kid_id = max.id
 ninth_activity.user = teacher
@@ -256,7 +253,7 @@ tenth_activity = Activity.new(
   date: Time.strptime('03/31/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',
   lunch_consumption: 'little',
-  overall_mood: 'Happy overall'
+  overall_mood: 'Super happy mostly'
 )
 tenth_activity.kid_id = max.id
 tenth_activity.user = teacher
@@ -305,6 +302,21 @@ chatroom_lucy.save!
 chatroom_brad = Chatroom.new(name: "Brad's chatroom")
 chatroom_brad.kid = brad
 chatroom_brad.save!
+
+message_one = Message.new(content: "Hi Ms Mary!")
+message_one.chatroom = chatroom_max
+message_one.user = parent
+message_one.save!
+
+message_two = Message.new(content: "Max has been loving our new dinosaur theme! We built a volcano and he was so excited!")
+message_two.chatroom = chatroom_max
+message_two.user = teacher
+message_two.save!
+
+message_three = Message.new(content: "He was twisting and turning throughout the night. How is he today?")
+message_three.chatroom = chatroom_max
+message_three.user = parent
+message_three.save!
 
 firsta_seed = Announcement.new(
   title: 'Parents-teacher personal meeting',

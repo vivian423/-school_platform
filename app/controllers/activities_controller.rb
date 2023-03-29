@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = policy_scope(Activity).order(created_at: :desc)
-    @naps = @activities.map(&:nap_duration)
+    @naps = @activities.order(created_at: :asc).map(&:nap_duration)
     @five_naps = @naps.first(5)
     @bowels = @activities.map(&:bowel_movement)
     @five_bowels = @bowels.first(5)
