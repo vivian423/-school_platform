@@ -3,25 +3,25 @@
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
   <h1 class=" align-content-start"><%= chatroom&.name  %><%= image_tag 'max.png', class:"logo-profile" %></h1>
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% chatroom&.messages.each do |message| %>
-      <div  class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-          <%= render "messages/message", message: message %>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% chatroom&.messages.each do |message| %>
+        <div  class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class=" icons-chat <%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+            <%= render "messages/message", message: message %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-  <%= simple_form_for [chatroom, message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
+      <% end %>
+    </div>
+    <%= simple_form_for [chatroom, message],
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
     %>
-  <%= button_tag(type: 'submit', class: "btn") do %>
-    <i class="fa-solid fa-circle-chevron-right fa-2xl" style="color: #4087ebda;"></i>
-  <% end %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message ##{chatroom.name}",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+    <%= button_tag(type: 'submit', class: "btn") do %>
+      <i class="fa-solid fa-circle-chevron-right fa-2xl" style="color: #4087ebda;"></i>
+    <% end %>
   <% end %>
 </div>
