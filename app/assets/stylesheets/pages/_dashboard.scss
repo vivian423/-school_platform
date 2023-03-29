@@ -1,20 +1,3 @@
-.dash-sidebar {
-  background-color: white;
-  width: 350px;
-  height: calc(100vh - 60px);
-  max-height: calc(100vh - 60px);
-  margin: 30px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  border-radius: 20px;
-  border: 3px solid black;
-}
-
-.sidebar ul li {
-  list-style-type: none;
-}
-
 .dashboard-grid-container {
   margin-left: 120px;
   margin-right: 380px;
@@ -23,12 +6,21 @@
   padding: 30px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 2, 1fr;
-  grid-template-rows: 2, 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   row-gap: 30px;
   column-gap: 40px;
 }
 
+// SET sizes TO GLOBAL?
+.card-headers {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-inline-start: 10px;
+}
+
+
+// Activity Section
 .activity-grid-item {
   grid-column: span 2;
   width: 100%;
@@ -37,7 +29,7 @@
   flex-flow: column;
 }
 
-.activity-card {
+.activity-container {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -45,13 +37,27 @@
 }
 
 .acts-card {
-  height: 100%;
-  background-color: #FFF;
+  background-color: #FFFF;
   border-radius: 20px;
   border: 3px solid black;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
 }
 
+.acts-info {
+  text-align: center;
+}
+
+.info-imgs {
+  width: 120px;
+}
+
+
+// Photo Section
 .photos-grid-item {
   width: 100%;
   height: 100%;
@@ -61,19 +67,27 @@
 
 .photos-card {
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   background-color: white;
   border-radius: 20px;
   border: 3px solid black;
   box-sizing: border-box;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
 }
 
-.dashboard-img-grid {
+.dashboard-grid-imgs {
+  height: 100%;
   width: 100%;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
 }
 
+
+// Messages Section
 .messages-grid-item {
   width: 100%;
   height: 100%;
@@ -89,8 +103,128 @@
   box-sizing: border-box;
 }
 
-.card-headers {
-  font-size: 1.2rem;
-  font-weight: 700;
-  padding-inline-start: 10px;
+
+// Sidebar
+.dash-sidebar {
+  background-color: white;
+  width: 350px;
+  height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px);
+  margin: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 20px;
+  border: 3px solid black;
+  padding: 20px 25px 0px 25px;
+}
+
+.dash-sidebar-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dash-child-info {
+  margin-top: 10px;
+}
+
+.avatar-container {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dash-child-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.calendar-cards {
+  margin-top: 15px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.date-card {
+  height: 100%;
+  background-color: #FBE7B8;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-card-today {
+  height: 100%;
+  background-color: orange;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date {
+  margin-top: 15px;
+  text-align: center;
+  line-height: 10px;
+}
+
+
+.upcoming-meetings {
+  margin-top: 20px;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.announcement-card {
+  width: 100%;
+  border-radius: 12px;
+  background-color: #FBE7B8;
+  margin: 20px 0px;
+  padding: 15px;
+}
+
+.announcement-title {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  cursor: pointer;
+}
+
+.announcement-card:hover {
+  background: #f56411;
+}
+
+.event-title {
+  flex: 3;
+  margin: 0;
+}
+
+.event-date {
+  flex: 1;
+}
+
+.accordion-input {
+  display: none;
+}
+
+.announcement-card-details {
+  margin-top: 10px;
+  display: none;
+}
+
+.accordion-input:checked ~ .announcement-card-details {
+  display: block;
 }
