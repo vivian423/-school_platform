@@ -87,10 +87,10 @@
       <% end %>
     </div>
     <div class="photos-card">
-      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[0].photo.key %>')"></div>
-      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[1].photo.key %>')"></div>
-      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[2].photo.key %>')"></div>
-      <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[3].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('<%= cl_image_path @photos[0].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('<%= cl_image_path @photos[1].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('<%= cl_image_path @photos[2].photo.key %>')"></div>
+      <div class="dashboard-grid-imgs" style="background-image: url('<%= cl_image_path @photos[3].photo.key %>')"></div>
     </div>
   </div>
 
@@ -129,7 +129,7 @@
       <p>Nido | <%= @kids.first.rooms.first.user.first_name %></strong></p>
     </div>
     <div class="avatar-container">
-      <div class="dash-child-avatar" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @kids.first.photo.key %>')">
+      <div class="dash-child-avatar" style="background-image: url('<%= cl_image_path @kids.first.photo.key %>')">
       </div>
     </div>
   </div>
