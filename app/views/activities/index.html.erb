@@ -39,9 +39,9 @@
           <tr>
             <td>Snack</td>
             <% @five_snack_consumption.each do |a| %>
-              <% if a == "all" %>
+              <% if a == 'all' %>
                   <td class="emoji_td_food"><%= inline_svg_tag "food_emojis/clap.svg" %></td>
-                <% elsif a == "most" %>
+                <% elsif a == 'most' %>
                   <td class="emoji_td_food"><%= inline_svg_tag "food_emojis/thumbs-up.svg" %></td>
               <% else %>
                   <td class="emoji_td_food"><%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></td>
@@ -51,9 +51,9 @@
           <tr>
             <td>Lunch</td>
           <% @five_lunch_consumption.each do |a| %>
-                  <% if a == "all" %>
+                  <% if a == 'all' %>
                   <td class="emoji_td_food"><%= inline_svg_tag "food_emojis/clap.svg" %></td>
-                <% elsif a == "most" %>
+                <% elsif a == 'most' %>
                   <td class="emoji_td_food"><%= inline_svg_tag "food_emojis/thumbs-up.svg" %></td>
               <% else %>
                   <td class="emoji_td_food"><%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></td>

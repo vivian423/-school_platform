@@ -196,7 +196,7 @@ sixth_activity = Activity.new(
   snack: 'Oatmeal cookie and whole milk',
   lunch: 'Baked hake with rice',
   date: Time.strptime('03/27/2023 17:00', '%m/%d/%Y %H:%M'),
-  snack_consumption: 'most',
+  snack_consumption: 'little',
   lunch_consumption: 'little',
   overall_mood: 'Under the weather'
 )
