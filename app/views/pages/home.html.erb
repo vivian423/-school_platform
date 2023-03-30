@@ -1,0 +1,15 @@
+<div class="hero">
+
+  <div class="hero-content"></div>
+    <%= image_tag('hero-illustration.png', class: "illustration") %>
+    <div class="hero-text">
+      <h1>We help keep track of your little ones.<br>Anytime, anywhere.</h1>
+      <% if user_signed_in? %>
+        <%= link_to "Get started", dashboard_path, class: "card-headers" %>
+      <% else %>
+        <%= link_to "Get started", new_user_session_path, class: "card-headers" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

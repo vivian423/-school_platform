@@ -1,1 +1,36 @@
-// Specific CSS for your home-page
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: relative;
+}
+
+.hero-content {
+  // margin-left: 50px;
+  // margin-right: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+}
+
+.hero-text > h1 {
+  // width: 300px;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+  margin-bottom: 30px;
+}
+
+
+.hero-text {
+  width: 70%;
+}
+.hero-text > a {
+  width: 50%;
+}
+
+.illustration {
+  height: 550px;
+}
