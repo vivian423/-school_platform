@@ -43,23 +43,29 @@ img {
   height: 40px;
   width: 40px;
   background-size: 100%, 100%;
+  font-weight: bolder;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 3px solid black;
   background-image: none;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-control-next-icon:after
 {
   content: '>';
+  font-weight: bolder;
   font-size: 25px;
-  color: black;
+  color: #4e8ee8da;
 }
 
 .carousel-control-prev-icon:after {
   content: '<';
+  font-weight: bolder;
   font-size: 25px;
-  color: black;
+  color: #4e8ee8da;
 }
 
 .carousel-control-prev {
