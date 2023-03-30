@@ -191,7 +191,7 @@ fifth_activity.user = teacher
 fifth_activity.save!
 
 sixth_activity = Activity.new(
-  bowel_movement: 1,
+  bowel_movement: 2,
   nap_duration: 120,
   snack: 'Oatmeal cookie and whole milk',
   lunch: 'Baked hake with rice',
@@ -207,7 +207,7 @@ sixth_activity.save!
 
 seventh_activity = Activity.new(
   bowel_movement: 0,
-  nap_duration: 110,
+  nap_duration: 100,
   snack: 'Yoghurt and banana',
   lunch: 'Pulled pork sandwich',
   date: Time.strptime('03/28/2023 17:00', '%m/%d/%Y %H:%M'),
@@ -222,7 +222,7 @@ seventh_activity.save!
 
 eighth_activity = Activity.new(
   bowel_movement: 1,
-  nap_duration: 120,
+  nap_duration: 110,
   snack: 'Cheese croissant',
   lunch: 'Meatloaf and mashed potatoes',
   date: Time.strptime('03/29/2023 17:00', '%m/%d/%Y %H:%M'),
@@ -235,8 +235,8 @@ eighth_activity.user = teacher
 eighth_activity.save!
 
 ninth_activity = Activity.new(
-  bowel_movement: 2,
-  nap_duration: 115,
+  bowel_movement: 1,
+  nap_duration: 105,
   snack: 'Banana and yoghurt',
   lunch: 'Chicken and beans fried rice',
   date: Time.strptime('03/30/2023 17:00', '%m/%d/%Y %H:%M'),
@@ -255,7 +255,7 @@ tenth_activity = Activity.new(
   lunch: 'Salmon and spaghetti',
   date: Time.strptime('03/31/2023 17:00', '%m/%d/%Y %H:%M'),
   snack_consumption: 'all',
-  lunch_consumption: 'little',
+  lunch_consumption: 'most',
   overall_mood: 'Super happy mostly'
 )
 tenth_activity.kid_id = max.id
