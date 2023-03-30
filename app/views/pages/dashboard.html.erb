@@ -104,20 +104,28 @@
       </div>
       <% end %>
     </div>
-    <div class="messages-card">
-      <% @chatrooom.messages.reverse.each do |message| %>
-      <div class="dash-message">
-        <div class="message-meta">
-          <% if message.user_id == current_user.id %>
+    <div class="overflow-box-message">
+      <div class="messages-card">
+        <% @chatrooom.messages.reverse.each do |message| %>
+        <% if message.user_id == current_user.id %>
+        <div class="dash-message message-blue">
+          <div class="message-meta">
             <p><%= "You" %></p>
-          <% else %>
-            <p><%= User.find(message.user_id).first_name %></p>
-          <% end %>
-          <p><%= message.created_at.strftime('%a %d. %I:%P').capitalize %></p>
+            <p><%= message.created_at.strftime('%a %d. %I:00%P').capitalize %></p>
+          </div>
+          <p><%= message.content %></p>
         </div>
-        <p><%= message.content %></p>
+        <% else %>
+          <div class="dash-message message-yellow">
+            <div class="message-meta">
+              <p><%= User.find(message.user_id).first_name %></p>
+              <p><%= message.created_at.strftime('%a %d. %I:00%P').capitalize %></p>
+            </div>
+            <p><%= message.content %></p>
+          </div>
+        <% end %>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
@@ -125,7 +133,7 @@
 <div class="dash-sidebar">
   <div class="dash-sidebar-header">
     <div class="dash-child-info">
-      <h3><%= @kids.first.first_name %> <%= @kids.first.last_name %></h3>
+      <h3 id="dash-child-name"><%= @kids.first.first_name %> <%= @kids.first.last_name %></h3>
       <p>Nido | <%= @kids.first.rooms.first.user.first_name %></strong></p>
     </div>
     <div class="avatar-container">

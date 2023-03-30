@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
     @five_bowels = @bowels.first(5).reverse
     @moods = @activities.map(&:overall_mood)
     @five_moods = @moods.first(5).reverse
+
     @dates = @activities.map(&:date)
     @snack_consumption = @activities.map(&:snack_consumption)
     @lunch_consumption = @activities.map(&:lunch_consumption)
@@ -16,9 +17,10 @@ class ActivitiesController < ApplicationController
       date.strftime("%a %d")
       # date.strftime("%Y-%m-%d")
     end
+
     @five_dates = @map_five_dates.reverse
-    @five_snack_consumption = @snack_consumption.last(5)
-    @five_lunch_consumption = @lunch_consumption.last(5)
+    @five_snack_consumption = @snack_consumption.first(5).reverse
+    @five_lunch_consumption = @lunch_consumption.first(5).reverse
     # @five_snack_consumption = @
     # @values = {naps: @naps, bowels: @bowels, moods: @moods, food_consumption: @food_consumption}
   end

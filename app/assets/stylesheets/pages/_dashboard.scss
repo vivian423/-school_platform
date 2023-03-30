@@ -126,7 +126,7 @@
   max-height: 320px;
   background-color: white;
   border-radius: 20px;
-  border: 3px solid black;
+  // border: 3px solid black;
   box-sizing: border-box;
   padding: 15px;
   overflow-y: auto;
@@ -172,6 +172,11 @@
   border-radius: 20px;
   border: 3px solid black;
   padding: 20px 25px 0px 25px;
+
+}
+
+#dash-child-name {
+  font-weight: bolder;
 }
 
 .dash-sidebar-header {
@@ -342,4 +347,10 @@
   height: 100%;
   position: absolute;
   font-size: 130px;
+}
+
+.overflow-box-message {
+  overflow-x: hidden;
+  border-radius: 20px;
+  border: 3px solid black;
 }
