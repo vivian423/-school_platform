@@ -21,6 +21,7 @@ class ActivitiesController < ApplicationController
     @five_lunch_consumption = @lunch_consumption.last(5)
     # @five_snack_consumption = @
     # @values = {naps: @naps, bowels: @bowels, moods: @moods, food_consumption: @food_consumption}
+    current_user.notifications.where(params[:type] == "activity").mark_as_read!
   end
 
   def show

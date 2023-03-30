@@ -7,6 +7,8 @@ class MessagesController < ApplicationController
     authorize @message
     @message.chatroom = @chatroom
     @message.user = current_user
+    @notifications = @message.chatroom.kid.parents[0].user.notifications
+    # raise
     @message.save
     ChatroomChannel.broadcast_to(
       @chatroom,

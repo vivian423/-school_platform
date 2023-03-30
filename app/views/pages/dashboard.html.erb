@@ -1,14 +1,16 @@
 <div class="dashboard-grid-container">
   <div class="activity-grid-item">
-    <div class="card-headers">
-      <h3>Daily Activities</h3>
-      <% new_activity = @notifications.unread.select { |n| n.params[:type] == "activity" }  %>
-      <% if new_activity.any? %>
-      <div class="notification-dot">
-        <p><%= @notifications.unread.select { |i| i.params[:type] == "activity" }.count.to_s %></p>
+    <%= link_to activities_path, class: "header-link" do %>
+      <div class="card-headers">
+        <h3>Daily Activities</h3>
+          <% new_activity = @notifications.unread.select { |n| n.params[:type] == "activity" }  %>
+          <% if new_activity.any? %>
+            <div class="notification-dot">
+              <p><%= current_user.notifications.unread.select { |i| i.params[:type] == "activity" }.count.to_s %></p>
+            </div>
+          <% end %>
       </div>
-      <% end %>
-    </div>
+    <% end %>
     <div class="activity-container">
       <div class="acts-card">
         <div class="acts-img">
@@ -77,15 +79,18 @@
   </div>
 
   <div class="photos-grid-item">
-    <div class="card-headers">
-      <h3>Photos</h3>
-      <% new_photo = @notifications.unread.select { |n| n.params[:type] == "photo" }  %>
-      <% if new_photo.any? %>
-      <div class="notification-dot">
-        <p><%= @notifications.unread.select { |i| i.params[:type] == "photo" }.count.to_s %></p>
+    <%= link_to photos_path, class: "header-link" do %>
+      <div class="card-headers">
+        <h3>Photos</h3>
+          <% new_photo = @notifications.unread.select { |n| n.params[:type] == "photo" }  %>
+          <% if new_photo.any? %>
+          <div class="notification-dot">
+            <p><%= current_user.notifications.unread.select { |i| i.params[:type] == "photo" }.count.to_s %></p>
+          </div>
+            <%= render 'notifications/photo_notifications', user: current_user %>
+          <% end %>
       </div>
-      <% end %>
-    </div>
+    <% end %>
     <div class="photos-card">
       <div class="dashboard-grid-imgs" style="background-image: url('<%= cl_image_path @photos[0].photo.key %>')"></div>
       <div class="dashboard-grid-imgs" style="background-image: url('<%= cl_image_path @photos[1].photo.key %>')"></div>
@@ -95,15 +100,20 @@
   </div>
 
   <div class="messages-grid-item">
-    <div class="card-headers">
-      <h3>Messages</h3>
-      <% new_message = @notifications.unread.select { |i| i.params[:type] == "message" }  %>
-      <% if new_message.any? %>
-      <div class="notification-dot">
-        <p><%= @notifications.unread.select { |n| n.params[:type] == "message" }.count.to_s %></p>
+    <%= link_to chatrooms_path, class: "header-link" do %>
+      <div class="card-headers">
+        <h3>Messages</h3>
+        <%# turbo_stream_from "notifications" %>
+        <%# turbo_frame_tag 'notifications' do %>
+          <% new_message = @notifications.unread.select { |i| i.params[:type] == "message" }  %>
+          <% if new_message.any? %>
+            <div class="notification-dot">
+              <p><%= current_user.notifications.unread.select { |i| i.params[:type] == "message" }.count.to_s %></p>
+            </div>
+          <% end %>
+        <%# end %>
       </div>
-      <% end %>
-    </div>
+    <% end %>
     <div class="messages-card">
       <% @chatrooom.messages.reverse.each do |message| %>
       <div class="dash-message">
@@ -171,9 +181,17 @@
     </div>
   </div>
 
-  <div class="card-headers mt-3">
-    <h3>Upcoming Events</h3>
-  </div>
+  <%= link_to meetings_path, class: "header-link" do %>
+    <div class="card-headers mt-3">
+      <h3>Upcoming Events</h3>
+      <% new_message = @notifications.unread.select { |i| i.params[:type] == "meeting" }  %>
+      <% if new_message.any? %>
+        <div class="notification-dot">
+          <p><%= current_user.notifications.unread.select { |i| i.params[:type] == "meeting" }.count.to_s %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <div class="upcoming-meetings">
     <% @meetings.sort_by(&:start_time).each do |meeting| %>
       <div class="meeting-card">
