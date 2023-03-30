@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: :home
 
   def home
   end
@@ -17,7 +17,6 @@ class PagesController < ApplicationController
       @chatrooom = Chatroom.find(@kids.first.chatroom_ids.join.to_i)
     end
 
-    @notifications = current_user.notifications.count
-    current_user.notifications.mark_as_read!
+    @notifications = current_user.notifications
   end
 end

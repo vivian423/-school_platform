@@ -1,6 +1,14 @@
 <div class="dashboard-grid-container">
   <div class="activity-grid-item">
-    <h3 class="card-headers">Daily Activities</h3>
+    <div class="card-headers">
+      <h3>Daily Activities</h3>
+      <% new_activity = @notifications.unread.select { |n| n.params[:type] == "activity" }  %>
+      <% if new_activity.any? %>
+      <div class="notification-dot">
+        <p><%= @notifications.unread.select { |i| i.params[:type] == "activity" }.count.to_s %></p>
+      </div>
+      <% end %>
+    </div>
     <div class="activity-container">
       <div class="acts-card">
         <div class="acts-img">
@@ -8,7 +16,24 @@
         </div>
         <div class="acts-info">
           <h5>Food Consumption</h5>
-          <p><%= @kids.first.activities.last.snack_consumption.capitalize %> snacks, <%= @kids.first.activities.last.lunch_consumption %> lunch</p>
+          <div class="food_emoji_wrapper">
+            <% a = @kids.first.activities.last.snack_consumption %>
+                <% if a == "all" %>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                  <% elsif a == "most" %>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                <% else %>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                <% end %>
+            <% a = @kids.first.activities.last.lunch_consumption %>
+                <% if a == "all" %>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                  <% elsif a == "most" %>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                <% else %>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                <% end %>
+          </div>
         </div>
       </div>
 
@@ -18,7 +43,7 @@
         </div>
         <div class="acts-info">
           <h5>Nap Time</h5>
-          <p><%= @kids.first.activities.last.nap_duration %> min</p>
+          <p><%= pluralize(@kids.first.activities.last.nap_duration, "min")%></p>
         </div>
       </div>
 
@@ -28,7 +53,7 @@
         </div>
         <div class="acts-info">
           <h5>Bowel Movements</h5>
-          <p><%= @kids.first.activities.last.bowel_movement %> times</p>
+          <p><%= pluralize(@kids.first.activities.last.bowel_movement, "time") %></p>
         </div>
       </div>
 
@@ -37,15 +62,30 @@
           <%= image_tag("mood.png", class: "info-imgs") %>
         </div>
         <div class="acts-info">
-          <h5>Overall Mood</h5>
-          <p><%= @kids.first.activities.last.overall_mood %></p>
+          <h5>Mood</h5>
+           <% a = @kids.first.activities.last.overall_mood %>
+              <% if a == "Super happy mostly" %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/star-face.svg" %></p>
+                <% elsif a == "Under the weather" %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/weather-face.svg" %></p>
+                <% else %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/little-smile-face.svg" %></p>
+            <% end %>
         </div>
       </div>
     </div>
   </div>
 
   <div class="photos-grid-item">
-    <h3 class="card-headers">Photos</h3>
+    <div class="card-headers">
+      <h3>Photos</h3>
+      <% new_photo = @notifications.unread.select { |n| n.params[:type] == "photo" }  %>
+      <% if new_photo.any? %>
+      <div class="notification-dot">
+        <p><%= @notifications.unread.select { |i| i.params[:type] == "photo" }.count.to_s %></p>
+      </div>
+      <% end %>
+    </div>
     <div class="photos-card">
       <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[0].photo.key %>')"></div>
       <div class="dashboard-grid-imgs" style="background-image: url('https://res.cloudinary.com/dnmf6p8tj/image/upload/v1/development/<%= @photos[1].photo.key %>')"></div>
@@ -55,9 +95,17 @@
   </div>
 
   <div class="messages-grid-item">
-    <h3 class="card-headers">Messages</h3>
+    <div class="card-headers">
+      <h3>Messages</h3>
+      <% new_message = @notifications.unread.select { |i| i.params[:type] == "message" }  %>
+      <% if new_message.any? %>
+      <div class="notification-dot">
+        <p><%= @notifications.unread.select { |n| n.params[:type] == "message" }.count.to_s %></p>
+      </div>
+      <% end %>
+    </div>
     <div class="messages-card">
-      <% @chatrooom.messages.each do |message| %>
+      <% @chatrooom.messages.reverse.each do |message| %>
       <div class="dash-message">
         <div class="message-meta">
           <% if message.user_id == current_user.id %>
@@ -65,7 +113,7 @@
           <% else %>
             <p><%= User.find(message.user_id).first_name %></p>
           <% end %>
-          <p><%= message.created_at.strftime('%a %d').upcase %></p>
+          <p><%= message.created_at.strftime('%a %d. %I:%P').capitalize %></p>
         </div>
         <p><%= message.content %></p>
       </div>
@@ -123,12 +171,14 @@
     </div>
   </div>
 
-  <h3 class="card-headers mt-3">Upcoming Events</h3>
+  <div class="card-headers mt-3">
+    <h3>Upcoming Events</h3>
+  </div>
   <div class="upcoming-meetings">
-    <% @meetings.each do |meeting| %>
+    <% @meetings.sort_by(&:start_time).each do |meeting| %>
       <div class="meeting-card">
           <p class="event-title"><%= meeting.name %></p>
-          <p class="event-date"><%= meeting.start_time.strftime('%b %d').upcase %></p>
+          <p class="event-date"><%= meeting.start_time.strftime('%b %d').capitalize %></p>
       </div>
     <% end %>
   </div>
