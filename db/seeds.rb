@@ -412,19 +412,24 @@ photos_array.each do |photo_url|
 end
 
 # Seeding Messages for MAX's Chatroom
-message_one = Message.new(content: "Hi Ms Mary!")
+message_one = Message.new(content: "Morning!")
 message_one.chatroom = chatroom_max
-message_one.user = parent
+message_one.user = teacher
 message_one.save!
 
-message_two = Message.new(content: "Max has been loving our new dinosaur theme! We built a volcano and he was so excited!")
+message_two = Message.new(content: "Max needs nappies and wipes please!")
 message_two.chatroom = chatroom_max
 message_two.user = teacher
 message_two.save!
 
-message_three = Message.new(content: "He was twisting and turning throughout the night. How is he today?")
+message_three = Message.new(content: "Got it, will pack some tomorrow :)")
 message_three.chatroom = chatroom_max
 message_three.user = parent
 message_three.save!
+
+message_four = Message.new(content: "He was twisting and turning throughout the night. How is he today?")
+message_four.chatroom = chatroom_max
+message_four.user = parent
+message_four.save!
 
 puts "... seeds created ..."
