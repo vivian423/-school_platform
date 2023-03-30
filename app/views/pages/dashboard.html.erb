@@ -11,11 +11,13 @@
           <% end %>
       </div>
     <% end %>
+
     <div class="activity-container">
       <div class="acts-card">
         <div class="acts-img">
           <%= image_tag("healthy-food.png", class: "info-imgs") %>
         </div>
+
         <div class="acts-info">
           <h5>Food Consumption</h5>
           <div class="food_emoji_wrapper">
@@ -37,6 +39,7 @@
                 <% end %>
           </div>
         </div>
+
       </div>
 
       <div class="acts-card">
@@ -113,21 +116,30 @@
           <% end %>
         <%# end %>
       </div>
-    <% end %>
-    <div class="messages-card">
-      <% @chatrooom.messages.reverse.each do |message| %>
-      <div class="dash-message">
-        <div class="message-meta">
-          <% if message.user_id == current_user.id %>
-            <p><%= "You" %></p>
-          <% else %>
-            <p><%= User.find(message.user_id).first_name %></p>
-          <% end %>
-          <p><%= message.created_at.strftime('%a %d. %I:%P').capitalize %></p>
-        </div>
-        <p><%= message.content %></p>
-      </div>
       <% end %>
+    </div>
+    <div class="overflow-box-message">
+      <div class="messages-card">
+        <% @chatrooom.messages.reverse.each do |message| %>
+        <% if message.user_id == current_user.id %>
+        <div class="dash-message message-user">
+          <div class="message-meta">
+            <p class="dash-message-name"><%= "You" %></p>
+            <p class="dash-message-date"><%= message.created_at.strftime('%a  %b  %e %l:%M %p').capitalize %></p>
+          </div>
+          <p><%= message.content %></p>
+        </div>
+        <% else %>
+          <div class="dash-message message-receiver">
+            <div class="message-meta">
+               <p class="dash-message-name"><%= User.find(message.user_id).first_name %></p>
+              <p class="dash-message-date"><%= message.created_at.strftime('%a %d. %I:00%P').capitalize %></p>
+            </div>
+            <p><%= message.content %></p>
+          </div>
+        <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -135,7 +147,7 @@
 <div class="dash-sidebar">
   <div class="dash-sidebar-header">
     <div class="dash-child-info">
-      <h3><%= @kids.first.first_name %> <%= @kids.first.last_name %></h3>
+      <h3 id="dash-child-name"><%= @kids.first.first_name %> <%= @kids.first.last_name %></h3>
       <p>Nido | <%= @kids.first.rooms.first.user.first_name %></strong></p>
     </div>
     <div class="avatar-container">

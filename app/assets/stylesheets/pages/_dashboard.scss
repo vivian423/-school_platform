@@ -9,7 +9,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   row-gap: 30px;
-  column-gap: 40px;
+  column-gap: 30px;
 }
 
 // SET sizes TO GLOBAL?
@@ -133,7 +133,7 @@
   max-height: 320px;
   background-color: white;
   border-radius: 20px;
-  border: 3px solid black;
+  // border: 3px solid black;
   box-sizing: border-box;
   padding: 15px;
   overflow-y: auto;
@@ -143,10 +143,30 @@
 
 .dash-message {
   width: 100%;
-  background-color: #FDF0D4;
+  // background-color: #FDF0D4;
   border-radius: 12px;
   padding: 15px;
-  margin-bottom: 10px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  border-radius: 40px 0 40px 0;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message-user {
+  background-color: #FDF0D4;
+}
+
+.message-receiver {
+  background-color: #bebebea1;
+}
+
+.dash-message-name {
+  font-weight: bold;
+}
+
+.dash-message-date {
+  font-size: 14px;
+  opacity: .8;
 }
 
 .message-meta {
@@ -179,6 +199,11 @@
   border-radius: 20px;
   border: 3px solid black;
   padding: 20px 25px 0px 25px;
+
+}
+
+#dash-child-name {
+  font-weight: bolder;
 }
 
 .dash-sidebar-header {
@@ -349,4 +374,10 @@
   height: 100%;
   position: absolute;
   font-size: 130px;
+}
+
+.overflow-box-message {
+  overflow-x: hidden;
+  border-radius: 20px;
+  border: 3px solid black;
 }

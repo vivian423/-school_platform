@@ -21,9 +21,9 @@ Meeting.destroy_all
 Message.destroy_all
 
 # USER
-parent = User.create(first_name: "Joy", last_name: "Petterson", password: "123456", email: "parent@parent.com", teacher: false)
+parent = User.create(first_name: "Alec", last_name: "Strobel", password: "123456", email: "parent@parent.com", teacher: false)
 
-parent_paul = User.create(first_name: "Paul", last_name: "Petterson", password: "123456", email: "parent2@parent.com", teacher: false)
+parent_paul = User.create(first_name: "Joy", last_name: "Strobel", password: "123456", email: "parent2@parent.com", teacher: false)
 
 parent_three = User.create(first_name: "Fernando", last_name: "Domingo", password: "123456", email: "parent3@parent.com", teacher: false)
 
@@ -74,12 +74,12 @@ meeting_five.save!
 # KIDS
 max = Kid.create(
   first_name: 'Max',
-  last_name: 'Ortega'
+  last_name: 'Strobel'
 )
 
 lucy = Kid.create(
   first_name: 'Lucy',
-  last_name: 'Ortega'
+  last_name: 'Strobel'
 )
 
 brad = Kid.create(
@@ -196,7 +196,7 @@ sixth_activity = Activity.new(
   snack: 'Oatmeal cookie and whole milk',
   lunch: 'Baked hake with rice',
   date: Time.strptime('03/27/2023 17:00', '%m/%d/%Y %H:%M'),
-  snack_consumption: 'most',
+  snack_consumption: 'little',
   lunch_consumption: 'little',
   overall_mood: 'Under the weather'
 )
@@ -385,6 +385,11 @@ tentha_seed.user = parent
 tentha_seed.save
 
 photos_array = [
+   "app/assets/images/school_photos/school_1.png",
+   "app/assets/images/school_photos/school_2.png",
+   "app/assets/images/school_photos/school_3.png",
+   "app/assets/images/school_photos/school_4.png",
+   "app/assets/images/school_photos/school_5.png",
    "https://images.unsplash.com/photo-1587616211892-f743fcca64f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
    "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
    "https://images.unsplash.com/photo-1597413545419-4013431dbfec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",

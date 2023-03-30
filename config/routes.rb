@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   match "*path", to: "errors#not_found", via: :all
+  get '/500', to: 'errors#internal_server'
 end
