@@ -136,10 +136,29 @@
 
 .dash-message {
   width: 100%;
-  background-color: #FDF0D4;
+  // background-color: #FDF0D4;
   border-radius: 12px;
   padding: 15px;
   margin-bottom: 10px;
+  border-radius: 40px 0 40px 0;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message-user {
+  background-color: #FDF0D4;
+}
+
+.message-receiver {
+  background-color: #bebebea1;
+}
+
+.dash-message-name {
+  font-weight: bold;
+}
+
+.dash-message-date {
+  font-size: 14px;
+  opacity: .8;
 }
 
 .message-meta {
