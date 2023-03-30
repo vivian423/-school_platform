@@ -63,6 +63,10 @@
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+
+  h5 {
+    font-weight: bolder;
+  }
 }
 
 .acts-info {
@@ -74,7 +78,7 @@
 }
 
 .info-imgs {
-  width: 120px;
+  width: 100px;
 }
 
 
@@ -253,7 +257,9 @@
 .meeting-card {
   width: 100%;
   border-radius: 12px;
-  background-color: #FBE7B8;
+  background: rgb(255,255,255);
+  background: linear-gradient(5deg, rgba(255,255,255,1) 9%, rgba(254,249,247,1) 22%, rgba(253,242,239,1) 35%, rgba(252,234,229,1) 51%, rgba(254,249,247,1) 67%, rgba(249,209,195,1) 82%, rgba(246,191,172,1) 95%, rgba(244,178,155,1) 100%);
+
   margin-bottom: 15px;
   padding: 15px;
 
@@ -275,4 +281,67 @@
 
 .event-date {
   flex: 1;
+}
+
+.dashboard_emojis_mood {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+}
+
+.dashboard_emojis_food {
+  height: 40px;
+  width: 40px;
+}
+
+@keyframes emojis_dashboard {
+  0% { transform: translate(-6px, -12px); }
+  33% { transform: translate(-8px, -12px); }
+  66% { transform: translate(-8px, -14px); }
+  100% { transform: translate(-6px, -14px); }
+}
+
+.dashboard_emojis_food:hover {
+  animation: emojis_dashboard .15s infinite alternate;
+}
+
+.dashboard_emojis_mood:hover {
+  animation: emojis_dashboard .15s infinite alternate;
+}
+
+.food_emoji_wrapper {
+  display: flex;
+  font-weight: bolder;
+  // justify-content: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
+.bowel-number-wrapper {
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+#bowel_text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#bowel_number {
+  z-index: 10;
+  opacity: .6;
+  font-size: 100px;
+  font-weight: bolder;
+  color:#4e8ee8da;
+  top: -65px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 130px;
 }

@@ -16,7 +16,24 @@
         </div>
         <div class="acts-info">
           <h5>Food Consumption</h5>
-          <p><%= @kids.first.activities.last.snack_consumption.capitalize %> snacks, <%= @kids.first.activities.last.lunch_consumption %> lunch</p>
+          <div class="food_emoji_wrapper">
+            <% a = @kids.first.activities.last.snack_consumption %>
+                <% if a == "all" %>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                  <% elsif a == "most" %>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                <% else %>
+                    <p class="dashboard_emojis_food"><strong>Snack</strong> <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                <% end %>
+            <% a = @kids.first.activities.last.lunch_consumption %>
+                <% if a == "all" %>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/clap.svg" %></p>
+                  <% elsif a == "most" %>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/thumbs-up.svg" %></p>
+                <% else %>
+                    <p class="dashboard_emojis_food"><strong>Lunch</strong> <%= inline_svg_tag "food_emojis/pinching-fingers.svg" %></p>
+                <% end %>
+          </div>
         </div>
       </div>
 
@@ -26,7 +43,7 @@
         </div>
         <div class="acts-info">
           <h5>Nap Time</h5>
-          <p><%= @kids.first.activities.last.nap_duration %> min</p>
+          <p><%= pluralize(@kids.first.activities.last.nap_duration, "min")%></p>
         </div>
       </div>
 
@@ -36,7 +53,7 @@
         </div>
         <div class="acts-info">
           <h5>Bowel Movements</h5>
-          <p><%= @kids.first.activities.last.bowel_movement %> times</p>
+          <p><%= pluralize(@kids.first.activities.last.bowel_movement, "time") %></p>
         </div>
       </div>
 
@@ -45,8 +62,15 @@
           <%= image_tag("mood.png", class: "info-imgs") %>
         </div>
         <div class="acts-info">
-          <h5>Overall Mood</h5>
-          <p><%= @kids.first.activities.last.overall_mood %></p>
+          <h5>Mood</h5>
+           <% a = @kids.first.activities.last.overall_mood %>
+              <% if a == "Super happy mostly" %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/star-face.svg" %></p>
+                <% elsif a == "Under the weather" %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/weather-face.svg" %></p>
+                <% else %>
+                <p class="dashboard_emojis_mood"><%= inline_svg_tag "mood_emojis/little-smile-face.svg" %></p>
+            <% end %>
         </div>
       </div>
     </div>

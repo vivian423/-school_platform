@@ -57,12 +57,15 @@ export default class extends Controller {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        },
         plugins: {
           legend: {
-             display: false,
-          }
-        }
+            display: false
+          },
+          tooltips: {
+            enabled: false
+          },
+        },
+      },
       })
 
       new Chart(this.bowelTarget, {

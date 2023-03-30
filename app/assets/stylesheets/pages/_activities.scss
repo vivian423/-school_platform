@@ -102,7 +102,6 @@
   outline: 0;
   border-bottom: 3px solid #4087ebda;
   // border-bottom: 3px #EF551D solid;
-
   font-size: 22px;
   padding: 8px;
   margin-bottom: 20px;
@@ -176,11 +175,9 @@
   }
 }
 
-.emoji_td {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 
+
+.emoji_td_mood {
   svg {
     display: block;
     height: 40px;
@@ -188,15 +185,42 @@
   }
 }
 
+.emoji_td_food {
+  svg {
+    display: block;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+
+@keyframes emoji_td_mood {
+  0% { transform: translate(-6px, -12px); }
+  33% { transform: translate(-8px, -12px); }
+  66% { transform: translate(-8px, -14px); }
+  100% { transform: translate(-6px, -14px); }
+}
+
+.emoji_td_mood:hover {
+  animation: emoji_td_mood .15s infinite alternate;
+}
+
+.emoji_td_food:hover {
+  transform: translate(-0.2em, -0.2em);
+  box-shadow: 0.20em 0.20em;
+}
+
+// .emoji_td_mood:hover {
+//   transform: translate(-0.2em, -0.2em);
+//   box-shadow: 0.20em 0.20em;
+// }
+
+
 .chart-card:hover {
   transform: translate(-0.05em, -0.05em);
   box-shadow: 0.10em 0.10em;
 }
 
-.chart-card:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
-}
 
 
 ::-webkit-scrollbar {
