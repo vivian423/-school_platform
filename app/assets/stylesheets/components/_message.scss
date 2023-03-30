@@ -1,7 +1,7 @@
 .message-row {
   margin-bottom: 10px;
   padding: 8px;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 // To style the message itself
@@ -10,9 +10,7 @@
   max-width: 50%;
   min-height: 100px;
   height: 100%;
-  border-radius: 0px;
-  padding: 20px 20px 5px 20px;
-  margin-bottom: 20px;
+  padding: 15px 15px 5px 15px;
   font-family: 'Mulish', sans-serif;
   font-weight: bold;
   color: black;
@@ -24,12 +22,20 @@
 }
 
 .sender-style {
+  display: flex;
+  flex-direction: column;
   background-color: #f9e4ad;
+  .av-message{
+    flex-direction: row-reverse;
+  }
 }
 
 .receiver-style {
   background-color: #4087ebda;
+  display: flex;
+  flex-direction: column;
 }
+
 .message-avatar{
   border-radius: 50%;
   width: 30px;
@@ -39,19 +45,19 @@
 .message-element {
   position: relative;
   height: 100%;
-
+  padding-bottom: 5px;
 
   i {
     position: absolute;
-    bottom: -2px;
+    bottom: 1px;
     right: 4px;
     font-size: 12px;
   }
   .av-message{
-
-    font-size: 1.15em !important;
+    display: flex;
+    font-size: 17px !important;
   } p{
     font-weight: 200;
-    font-size: 18px;
+    font-size: 17px;
   }
 }
