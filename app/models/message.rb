@@ -13,16 +13,10 @@ class Message < ApplicationRecord
 
   def broadcast_notifications
     if user.teacher
-      UserNotification.with(content: self.content).deliver(self.chatroom.kid.parents[0].user)
+      UserNotification.with(type: "message").deliver(self.chatroom.kid.parents[0].user)
+      UserNotification.with(type: "message").deliver(self.chatroom.kid.parents[1].user)
     else
-      UserNotification.with(content: self.content).deliver(self.chatroom.kid.rooms[0].user)
+      UserNotification.with(type: "message").deliver(self.chatroom.kid.rooms[0].user)
     end
-
-    # p user
-    # p self
-    # p self.chatroom.kid.parents[0]
-    # p "----------------------------------------"
-    # p act.kid.parents[0]
-
   end
 end

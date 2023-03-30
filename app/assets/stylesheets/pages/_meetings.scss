@@ -5,11 +5,15 @@
   border-radius: 30px;
   border: 0.25rem solid black;
   padding: 30px;
-  height: 100vh;
+  box-sizing: border-box;
   min-width: 80%;
   display: inline-block;
   justify-content: center;
   font-family: 'Mulish', sans-serif;
+  height: calc(100vh - 60px);
+  margin-left: 160px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
   h5 {
     font-family: 'Mulish', sans-serif;
@@ -34,6 +38,10 @@
     }
   }
 
+  .calendar {
+    width: 100%;
+    height: 700px;
+  }
 .simple-calendar {
   table {
     -webkit-border-horizontal-spacing: 0px;
@@ -42,8 +50,9 @@
     border: 1px solid rgb(221, 221, 221);
     border-collapse: collapse;
     box-sizing: border-box;
-    width: 70%;
-    max-width: 700px;
+    width: 100%;
+    height: 85%;
+    // max-width: 700px;
     min-height: 80vh;
     font-family: 'Mulish', sans-serif;
   }
@@ -124,12 +133,12 @@
   color: white;
   padding: 8px 24px;
   border-radius: 8px;
-  background: #E9533E;
+  background: #4087ebda;
   transition: background 0.3s ease;
 }
 
 .meeting:hover {
-  background: #e9523ee2;
+  background: #4087ebf2;
   color: white;
 }
 
