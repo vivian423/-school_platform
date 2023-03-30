@@ -16,30 +16,38 @@
   color: black;
   margin-top: 1px;
   font-size: 12px;
-  border-radius: 40px 0 40px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
 }
 
 .sender-style {
   display: flex;
+  border-radius: 0 40px 0 40px;
   flex-direction: column;
-  background-color: #f9e4ad;
+  background-color: #FDF0D4;
   .av-message{
     flex-direction: row-reverse;
   }
 }
 
+.av-message strong {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
 .receiver-style {
-  background-color: #4087ebda;
+  background-color: #bebebea1;
+  border-radius: 40px 0 40px 0;
   display: flex;
   flex-direction: column;
 }
 
 .message-avatar{
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .message-element {

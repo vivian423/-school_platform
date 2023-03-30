@@ -1,7 +1,7 @@
 <div id="message-<%= message.id %>" class="message-element">
   <small class='av-message'>
     <% if current_user == message.user %>
-      <%= image_tag "chatparent.png", width: 20, height: 25, class: "message-avatar" %>
+      <%= image_tag "chatteacher.png", width: 20, height: 25, class: "message-avatar" %>
     <% else %>
       <%= image_tag "chatteacher.png", width: 20, height: 25, class: "message-avatar" %>
     <% end %>

@@ -74,12 +74,12 @@ meeting_five.save!
 # KIDS
 max = Kid.create(
   first_name: 'Max',
-  last_name: 'Ortega'
+  last_name: 'Strobel'
 )
 
 lucy = Kid.create(
   first_name: 'Lucy',
-  last_name: 'Ortega'
+  last_name: 'Strobel'
 )
 
 brad = Kid.create(
