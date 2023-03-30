@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 100px;
   // position: relative;
 }
 
@@ -21,6 +22,8 @@
   font-weight: 900;
   line-height: 60px;
   margin-bottom: 30px;
+  left: -50px;
+  position: relative;
 }
 
 
@@ -29,8 +32,13 @@
 }
 .hero-text > a {
   width: 50%;
+  left: -50px;
+  position: relative;
 }
 
 .illustration {
   height: 450px;
+}
+.card-headers{
+  margin-right: 10px;
 }
