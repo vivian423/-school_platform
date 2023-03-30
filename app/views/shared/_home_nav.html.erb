@@ -19,7 +19,6 @@
           <%= link_to "Log out", destroy_user_session_path, class: "card-headers", data: {turbo_method: :delete} %>
         </li>
       <% else %>
-        li class="nav-item"
           <%= link_to "Sign Up", new_user_registration_path, class: "card-headers" %>
           <%= link_to "Login", new_user_session_path, class: "card-headers" %>
         </li>
