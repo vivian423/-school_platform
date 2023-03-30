@@ -2,10 +2,12 @@
   <% if user_signed_in? %>
     <%= link_to dashboard_path, class: "navbar-brand" do %>
       <%= inline_svg_tag "icons/logo.svg" %>
+      <%= inline_svg_tag "icons/text-logo.svg" %>
     <% end %>
   <% else %>
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= inline_svg_tag "icons/logo.svg" %>
+      <%= inline_svg_tag "icons/text-logo.svg" %>
     <% end %>
   <% end %>
 
