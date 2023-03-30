@@ -2,14 +2,16 @@
 
   <div class="calendar">
 
-    <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
-      <%= date %>
 
-      <% meetings.each do |meeting| %>
-        <div class="meeting">
-          <p><%= meeting.name %></p>
-        </div>
-      <% end %>
+      <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+        <%= date %>
+ 
+
+    <% meetings.each do |meeting| %>
+      <div class="meeting">
+        <p><%= meeting.name %></p>
+      </div>
     <% end %>
+  <% end %>
   </div>
 </div>
