@@ -385,11 +385,11 @@ tentha_seed.user = parent
 tentha_seed.save
 
 photos_array = [
-  "app/assets/images/school_photos/school_1.png",
-  "app/assets/images/school_photos/school_2.png",
-  "app/assets/images/school_photos/school_3.png",
-  "app/assets/images/school_photos/school_4.png",
-  "app/assets/images/school_photos/school_5.png",
+   "app/assets/images/school_photos/school_1.png",
+   "app/assets/images/school_photos/school_2.png",
+   "app/assets/images/school_photos/school_3.png",
+   "app/assets/images/school_photos/school_4.png",
+   "app/assets/images/school_photos/school_5.png",
    "https://images.unsplash.com/photo-1587616211892-f743fcca64f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGtpbmRlcmdhcnRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60.jpg",
    "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
    "https://images.unsplash.com/photo-1597413545419-4013431dbfec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtpZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60.jpg",
