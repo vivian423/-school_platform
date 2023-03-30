@@ -1,0 +1,29 @@
+<div class="home-navbar">
+  <% if user_signed_in? %>
+    <%= link_to dashboard_path, class: "navbar-brand" do %>
+      <%= inline_svg_tag "icons/logo.svg" %>
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= inline_svg_tag "icons/logo.svg" %>
+    <% end %>
+  <% end %>
+
+  <div>
+    <ul class="home-nav-right me-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Dashboard", dashboard_path, class: "card-headers" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, class: "card-headers", data: {turbo_method: :delete} %>
+        </li>
+      <% else %>
+        li class="nav-item"
+          <%= link_to "Sign Up", new_user_registration_path, class: "card-headers" %>
+          <%= link_to "Login", new_user_session_path, class: "card-headers" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

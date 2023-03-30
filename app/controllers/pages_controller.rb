@@ -18,5 +18,6 @@ class PagesController < ApplicationController
     end
 
     @notifications = current_user.notifications
+    # current_user.notifications.mark_as_read!
   end
 end
