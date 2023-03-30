@@ -37,8 +37,16 @@
 }
 
 .illustration {
-  height: 450px;
+  margin-left: 40px;
+  width: 80%;
+  height: 500px;
 }
 .card-headers{
   margin-right: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  height: 45px;
+  column-gap: 20px;
 }

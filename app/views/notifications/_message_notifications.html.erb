@@ -1,0 +1,6 @@
+<%= turbo_stream_from "notifications" %>
+<%= turbo_frame_tag 'notifications' do %>
+  <div class="notification-dot">
+    <p><%= user.notifications.unread.select { |i| i.params[:type] == "message" }.count.to_s %></p>
+  </div>
+<% end %>

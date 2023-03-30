@@ -18,5 +18,10 @@ class Message < ApplicationRecord
     else
       UserNotification.with(type: "message").deliver(self.chatroom.kid.rooms[0].user)
     end
+
+    broadcast_prepend_to "notifications",
+                          target: "notifications",
+                          partial: "notifications/message_notifications",
+                          locals: { type: "message", user: self.chatroom.kid.parents[0].user, unread: true }
   end
 end

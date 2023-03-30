@@ -12,5 +12,10 @@ class Photo < ApplicationRecord
     User.all.each do |user|
       UserNotification.with(type: "photo").deliver(user) if user.teacher == false
     end
+
+    # broadcast_prepend_to "notifications",
+    #                       target: "notifications",
+    #                       partial: "notifications/photo_notifications",
+    #                       locals: { type: "message", unread: true }
   end
 end

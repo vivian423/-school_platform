@@ -20,12 +20,17 @@
   padding-inline-start: 10px;
 }
 
+.header-link {
+  all: unset;
+}
+
 // Notifications Dot
 .notification-dot {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #EF551D;
+  color: white;
   display: flex;
   justify-content: center;
   // align-items: center;
@@ -34,6 +39,8 @@
 .notification-dot > p {
   font-size: 16px;
   color: white;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 
@@ -85,7 +92,7 @@
 // Photo Section
 .photos-grid-item {
   width: 100%;
-  height: 100%;
+  height: 95%;
   display: flex;
   flex-flow: column;
 }
@@ -116,7 +123,7 @@
 // Messages Section
 .messages-grid-item {
   width: 100%;
-  height: 100%;
+  height: 95%;
   display: flex;
   flex-flow: column;
 }

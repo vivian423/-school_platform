@@ -17,6 +17,7 @@ class PhotosController < ApplicationController
   def index
     @photos = policy_scope(Photo)
     @photo = Photo.new
+    current_user.notifications.where(params[:type] == "photo").mark_as_read!
   end
 
   def destroy
@@ -26,9 +27,10 @@ class PhotosController < ApplicationController
     redirect_to photos_path, status: :see_other
   end
 
-    private
 
-    def photo_params
-      params.require(:photo).permit(:photo)
-    end
+  private
+
+  def photo_params
+    params.require(:photo).permit(:photo)
+  end
 end

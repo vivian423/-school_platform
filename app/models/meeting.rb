@@ -13,5 +13,10 @@ class Meeting < ApplicationRecord
     User.all.each do |user|
       UserNotification.with(type: "meeting").deliver(user) if user.teacher == false
     end
+
+    # broadcast_prepend_to "notifications",
+    #                       target: "notifications",
+    #                       partial: "notifications/meeeting_notifications",
+    #                       locals: { type: "message", unread: true }
   end
 end
