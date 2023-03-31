@@ -17,7 +17,10 @@ class PhotosController < ApplicationController
   def index
     @photos = policy_scope(Photo)
     @photo = Photo.new
-    current_user.notifications.where(params[:type] == "photo").mark_as_read!
+
+    current_user.notifications.unread.each do |notification|
+      notification.mark_as_read! if notification.params[:type] == "photo"
+    end
   end
 
   def destroy
